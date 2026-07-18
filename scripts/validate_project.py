@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "app/src/main/assets"
 DATABASE_PATH = ASSETS / "bsb.sqlite"
 READINGS_PATH = ASSETS / "curated_daily_verses.json"
+EXPECTED_DATABASE_VERSION = 2
+EXPECTED_VERSE_COUNT = 31_102
 
 REQUIRED_FILES = [
     "settings.gradle.kts",
@@ -26,6 +28,8 @@ REQUIRED_FILES = [
     "app/src/main/java/com/joel/minimallauncher/ui/LauncherViewModel.kt",
     "app/src/main/java/com/joel/minimallauncher/verse/BibleRepository.kt",
     "app/src/main/java/com/joel/minimallauncher/verse/DailyVerseRepository.kt",
+    "scripts/generate_bsb_database.py",
+    ".github/workflows/build-apk.yml",
 ]
 
 
@@ -47,7 +51,9 @@ for xml_path in ROOT.glob("app/src/main/**/*.xml"):
     except ET.ParseError as exc:
         fail(f"Malformed XML file {xml_path.relative_to(ROOT)}: {exc}")
 
-manifest = (ROOT / "app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
+manifest = (ROOT / "app/src/main/AndroidManifest.xml").read_text(
+    encoding="utf-8"
+)
 for token in (
     "android.intent.category.HOME",
     "android.intent.category.LAUNCHER",
@@ -67,143 +73,89 @@ try:
         value = integrity_result[0] if integrity_result else "no result"
         fail(f"SQLite integrity check failed: {value}")
 
+    database_version = connection.execute("PRAGMA user_version").fetchone()[0]
+    if database_version != EXPECTED_DATABASE_VERSION:
+        fail(
+            f"Expected BSB database version {EXPECTED_DATABASE_VERSION}, "
+            f"found {database_version}. The clean generator did not run."
+        )
+
     table_names = {
         row[0]
         for row in connection.execute(
             "SELECT name FROM sqlite_master WHERE type = 'table'"
         )
     }
-    required_tables = {"BSB_books", "BSB_verses"}
+    required_tables = {"verses", "metadata"}
     missing_tables = required_tables - table_names
     if missing_tables:
         fail(
-            "Missing required BSB database tables: "
+            "Generated BSB database is missing tables: "
             + ", ".join(sorted(missing_tables))
         )
 
-    expected_columns = {
-        "BSB_books": {"id", "name"},
-        "BSB_verses": {"id", "book_id", "chapter", "verse", "text"},
-    }
-    for table_name, expected in expected_columns.items():
-        actual = {
-            row[1]
-            for row in connection.execute(f'PRAGMA table_info("{table_name}")')
-        }
-        missing_columns = expected - actual
-        if missing_columns:
-            fail(
-                f"{table_name} is missing columns: "
-                + ", ".join(sorted(missing_columns))
-            )
-
-    raw_book_row_count = connection.execute(
-        "SELECT COUNT(*) FROM BSB_books"
-    ).fetchone()[0]
-
-    raw_verse_row_count = connection.execute(
-        "SELECT COUNT(*) FROM BSB_verses"
-    ).fetchone()[0]
-
-    logical_verse_count = connection.execute(
-        """
-        SELECT COUNT(*)
-        FROM (
-            SELECT book_id, chapter, verse
-            FROM BSB_verses
-            GROUP BY book_id, chapter, verse
+    # These are from the incompatible Scrollmapper database that caused the
+    # repeated validation failures. They must not be used by this project.
+    stale_tables = {"BSB_books", "BSB_verses"} & table_names
+    if stale_tables:
+        fail(
+            "The incompatible Scrollmapper BSB database is still present: "
+            + ", ".join(sorted(stale_tables))
         )
-        """
-    ).fetchone()[0]
 
-    referenced_book_count = connection.execute(
-        "SELECT COUNT(DISTINCT book_id) FROM BSB_verses"
-    ).fetchone()[0]
+    expected_columns = {
+        "id",
+        "book_number",
+        "book_name",
+        "chapter",
+        "verse",
+        "text",
+    }
+    actual_columns = {
+        row[1] for row in connection.execute('PRAGMA table_info("verses")')
+    }
+    missing_columns = expected_columns - actual_columns
+    if missing_columns:
+        fail(
+            "Generated verses table is missing columns: "
+            + ", ".join(sorted(missing_columns))
+        )
 
-    distinct_referenced_book_names = connection.execute(
-        """
-        SELECT COUNT(DISTINCT b.name)
-        FROM BSB_books AS b
-        INNER JOIN BSB_verses AS v ON v.book_id = b.id
-        """
+    verse_count = connection.execute("SELECT COUNT(*) FROM verses").fetchone()[0]
+    book_count = connection.execute(
+        "SELECT COUNT(DISTINCT book_name) FROM verses"
     ).fetchone()[0]
-
-    orphaned_verse_count = connection.execute(
-        """
-        SELECT COUNT(*)
-        FROM BSB_verses AS v
-        LEFT JOIN BSB_books AS b ON b.id = v.book_id
-        WHERE b.id IS NULL
-        """
-    ).fetchone()[0]
-
-    duplicate_reference_count = connection.execute(
+    duplicate_count = connection.execute(
         """
         SELECT COUNT(*)
         FROM (
-            SELECT book_id, chapter, verse
-            FROM BSB_verses
-            GROUP BY book_id, chapter, verse
+            SELECT book_name, chapter, verse
+            FROM verses
+            GROUP BY book_name, chapter, verse
             HAVING COUNT(*) > 1
         )
         """
     ).fetchone()[0]
-
-    conflicting_duplicate_count = connection.execute(
-        """
-        SELECT COUNT(*)
-        FROM (
-            SELECT book_id, chapter, verse
-            FROM BSB_verses
-            GROUP BY book_id, chapter, verse
-            HAVING COUNT(DISTINCT TRIM(text)) > 1
-        )
-        """
+    blank_text_count = connection.execute(
+        "SELECT COUNT(*) FROM verses WHERE TRIM(text) = ''"
     ).fetchone()[0]
 
-    if logical_verse_count < 31_000:
+    if verse_count != EXPECTED_VERSE_COUNT:
         fail(
-            "Expected a complete BSB Bible, "
-            f"found only {logical_verse_count:,} logical verses"
+            f"Expected {EXPECTED_VERSE_COUNT:,} BSB verses, "
+            f"found {verse_count:,}"
         )
-
-    if referenced_book_count != 66:
-        fail(
-            "Expected verses from 66 Bible books, "
-            f"found {referenced_book_count}"
-        )
-
-    if distinct_referenced_book_names != 66:
-        fail(
-            "Expected 66 distinct referenced book names, "
-            f"found {distinct_referenced_book_names}"
-        )
-
-    if orphaned_verse_count:
-        fail(
-            f"Found {orphaned_verse_count} verses "
-            "with no matching BSB_books row"
-        )
-
-    # This database export contains multiple physical rows for some references.
-    # The Android repository deterministically uses the lowest row id for each
-    # logical reference. Conflicting variants are reported but do not block the
-    # build because all curated references still resolve to one canonical row.
-    if conflicting_duplicate_count:
-        print(
-            "Warning: BSB database contains "
-            f"{conflicting_duplicate_count:,} logical references with "
-            "multiple text variants. The app will use the lowest-id row."
-        )
+    if book_count != 66:
+        fail(f"Expected 66 BSB books, found {book_count}")
+    if duplicate_count:
+        fail(f"Generated BSB database has {duplicate_count} duplicate references")
+    if blank_text_count:
+        fail(f"Generated BSB database has {blank_text_count} blank verses")
 
     available_references = {
         f"{book_name} {chapter}:{verse}"
         for book_name, chapter, verse in connection.execute(
-            """
-            SELECT DISTINCT b.name, v.chapter, v.verse
-            FROM BSB_verses AS v
-            INNER JOIN BSB_books AS b ON b.id = v.book_id
-            """
+            "SELECT book_name, chapter, verse FROM verses"
         )
     }
 
@@ -221,11 +173,9 @@ if plans.get("translation") != "BSB":
 readings = plans.get("readings")
 if not isinstance(readings, list):
     fail('curated_daily_verses.json must contain a "readings" array')
-
 if len(readings) < 365:
     fail(
-        "Expected at least 365 curated daily readings, "
-        f"found {len(readings)}"
+        f"Expected at least 365 curated daily readings, found {len(readings)}"
     )
 
 main_references: list[str] = []
@@ -239,21 +189,25 @@ for index, reading in enumerate(readings):
 
     if not isinstance(main, str) or not main.strip():
         fail(f"Reading {index} has an invalid main reference")
-
     if (
         not isinstance(related, list)
         or len(related) != 3
-        or not all(isinstance(ref, str) and ref.strip() for ref in related)
+        or not all(
+            isinstance(reference, str) and reference.strip()
+            for reference in related
+        )
     ):
         fail(
             f"Reading {index} must contain exactly three valid "
-            "related verse references"
+            "related references"
         )
-
     if (
         not isinstance(themes, list)
         or not themes
-        or not all(isinstance(theme, str) and theme.strip() for theme in themes)
+        or not all(
+            isinstance(theme, str) and theme.strip()
+            for theme in themes
+        )
     ):
         fail(f"Reading {index} must contain at least one valid theme")
 
@@ -283,31 +237,29 @@ for token in (
     "dpm.lockNow()",
     "Screen.DAILY_VERSE",
     '"bsb.sqlite"',
-    '"BSB_books"',
-    '"BSB_verses"',
+    '"verses"',
 ):
     if token not in source:
         fail(f"Required source feature missing: {token}")
 
-for stale_token in ("King James Version", '"kjv.sqlite"', "FROM verses"):
+for stale_token in (
+    "King James Version",
+    '"kjv.sqlite"',
+    '"BSB_books"',
+    '"BSB_verses"',
+):
     if stale_token in source:
-        fail(f"Stale Bible implementation remains: {stale_token}")
+        fail(f"Stale or incompatible Bible implementation remains: {stale_token}")
 
-print(f"Validated {len(REQUIRED_FILES)} required files.")
-print("All Android XML resources are well formed.")
+print(f"Validated {len(REQUIRED_FILES)} required files")
+print("All Android XML resources are well formed")
 print(
-    "BSB SQLite database integrity: OK "
-    f"({raw_book_row_count} raw book rows, "
-    f"{referenced_book_count} referenced books, "
-    f"{raw_verse_row_count:,} raw verse rows, "
-    f"{logical_verse_count:,} logical verses)."
-)
-print(
-    f"Duplicate logical references: {duplicate_reference_count:,}; "
-    f"conflicting variants: {conflicting_duplicate_count:,}."
+    "Clean BSB SQLite database: OK "
+    f"({book_count} books, {verse_count:,} unique verses, "
+    f"version {database_version})"
 )
 print(
     f"Curated daily readings: {len(readings)} unique main references; "
-    "every reference resolves locally."
+    "every main and related reference resolves locally"
 )
-print("Full-chapter viewing and double-tap lock source checks: present.")
+print("Full-chapter viewing and double-tap lock source checks: present")
