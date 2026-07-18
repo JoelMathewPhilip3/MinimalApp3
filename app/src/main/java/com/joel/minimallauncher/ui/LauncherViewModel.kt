@@ -56,6 +56,7 @@ class LauncherViewModel(application: Application) : AndroidViewModel(application
     fun setReduceGestures(value: Boolean) = viewModelScope.launch { settingsRepository.setReduceGestures(value) }
     fun setHapticFeedback(value: Boolean) = viewModelScope.launch { settingsRepository.setHapticFeedback(value) }
     fun setDoubleTapLock(value: Boolean) = viewModelScope.launch { settingsRepository.setDoubleTapLock(value) }
+    fun setLauncherIdleLockSeconds(value: Int) = viewModelScope.launch { settingsRepository.setLauncherIdleLockSeconds(value) }
     fun setShowMorningReading(value: Boolean) = viewModelScope.launch { settingsRepository.setShowMorningReading(value) }
     fun completeOnboarding() = viewModelScope.launch { settingsRepository.completeOnboarding() }
 }
