@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Joel Minimal Launcher</string>
+    <string name="device_admin_description">Allows optional double-tap-to-lock from the launcher home screen.</string>
+</resources>
