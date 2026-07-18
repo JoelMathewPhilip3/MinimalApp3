@@ -22,6 +22,24 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Download official public-domain BSB USFM
+        run: |
+          curl --fail --location --retry 4 --retry-delay 3 \
+            "https://ebible.org/Scriptures/engbsb_usfm.zip" \
+            --output /tmp/engbsb_usfm.zip
+
+      - name: Generate clean offline BSB database
+        run: |
+          rm -f app/src/main/assets/bsb.sqlite
+          rm -f app/src/main/assets/kjv.sqlite
+          python3 scripts/generate_bsb_database.py \
+            --input /tmp/engbsb_usfm.zip \
+            --output app/src/main/assets/bsb.sqlite
+          ls -lh app/src/main/assets/bsb.sqlite
+
+      - name: Validate bundled Bible and project files
+        run: python3 scripts/validate_project.py
+
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
@@ -30,9 +48,6 @@ jobs:
 
       - name: Install Android SDK platform
         run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
-
-      - name: Validate bundled Bible and project files
-        run: python3 scripts/validate_project.py
 
       - name: Make Gradle executable
         run: chmod +x ./gradlew
@@ -43,6 +58,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Joel-Minimal-Launcher-V8-debug
+          name: Joel-Minimal-Launcher-BSB-debug
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
