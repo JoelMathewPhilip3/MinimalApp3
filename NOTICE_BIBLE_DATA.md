@@ -1,14 +1,25 @@
-# Bible Data Notice
+# Berean Standard Bible Data Notice
 
-This project bundles the King James Version of the Bible for offline use.
+This project bundles the complete Berean Standard Bible for offline use in the generated APK.
 
-Source used to create `app/src/main/assets/kjv.sqlite`:
+## Source
 
-- npm package: `kjv@1.0.0`
-- upstream repository: `farskipper/kjv`
-- source file: `json/verses-1769.json`
-- upstream license: Unlicense / Public Domain
+The GitHub Actions build downloads the official BSB USFM archive from:
 
-The database contains 31,102 canonical KJV verses. Formatting markers from the source were normalized for plain-text display: paragraph markers and square brackets around supplied italic words were removed while preserving the words.
+`https://ebible.org/Scriptures/engbsb_usfm.zip`
 
-The `daily_reading_refs.json` file contains references only. It does not duplicate the Bible text.
+The build converts the canonical 66-book text into:
+
+`app/src/main/assets/bsb.sqlite`
+
+The resulting database contains 31,102 canonical verses and is used read-only at runtime.
+
+## Public-domain status
+
+The Berean Bible and Majority Bible texts were dedicated to the public domain on April 30, 2023. All uses are freely permitted.
+
+Attribution is appreciated but not required:
+
+> The Holy Bible, Berean Standard Bible, BSB is produced in cooperation with Bible Hub, Discovery Bible, OpenBible.com, and the Berean Bible Translation Committee. This text of God's Word has been dedicated to the public domain.
+
+The app preserves the official Scripture wording and does not require runtime internet access.
