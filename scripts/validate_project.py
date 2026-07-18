@@ -6,6 +6,9 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "app/src/main/assets"
+DATABASE_PATH = ASSETS / "bsb.sqlite"
+READINGS_PATH = ASSETS / "curated_daily_verses.json"
+
 required = [
     "settings.gradle.kts",
     "build.gradle.kts",
@@ -24,98 +27,168 @@ required = [
     "app/src/main/java/com/joel/minimallauncher/verse/BibleRepository.kt",
     "app/src/main/java/com/joel/minimallauncher/verse/DailyVerseRepository.kt",
 ]
+
 missing = [path for path in required if not (ROOT / path).is_file()]
 if missing:
     raise SystemExit("Missing required files:\n" + "\n".join(missing))
 
-for xml in ROOT.glob("app/src/main/**/*.xml"):
-    ET.parse(xml)
+for xml_path in ROOT.glob("app/src/main/**/*.xml"):
+    ET.parse(xml_path)
 
 manifest = (ROOT / "app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
-for token in [
+for token in (
     "android.intent.category.HOME",
     "android.intent.category.LAUNCHER",
     "android.app.device_admin",
-]:
+):
     if token not in manifest:
         raise SystemExit(f"Manifest is missing {token}")
 
-db_path = ASSETS / "bsb.sqlite"
-connection = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+connection = sqlite3.connect(f"file:{DATABASE_PATH}?mode=ro", uri=True)
 try:
     integrity = connection.execute("PRAGMA integrity_check").fetchone()[0]
     if integrity != "ok":
         raise SystemExit(f"SQLite integrity check failed: {integrity}")
-    verse_count = connection.execute("SELECT COUNT(*) FROM verses").fetchone()[0]
-    if verse_count != 31_102:
-        raise SystemExit(f"Expected 31,102 BSB verses, found {verse_count}")
+
+    table_names = {
+        row[0]
+        for row in connection.execute(
+            "SELECT name FROM sqlite_master WHERE type = 'table'"
+        )
+    }
+    required_tables = {"BSB_books", "BSB_verses"}
+    missing_tables = required_tables - table_names
+    if missing_tables:
+        raise SystemExit(
+            "Missing required BSB database tables: "
+            + ", ".join(sorted(missing_tables))
+        )
+
+    expected_columns = {
+        "BSB_books": {"id", "name"},
+        "BSB_verses": {"id", "book_id", "chapter", "verse", "text"},
+    }
+    for table, expected in expected_columns.items():
+        columns = {
+            row[1] for row in connection.execute(f'PRAGMA table_info("{table}")')
+        }
+        missing_columns = expected - columns
+        if missing_columns:
+            raise SystemExit(
+                f"{table} is missing columns: "
+                + ", ".join(sorted(missing_columns))
+            )
+
+    book_count = connection.execute(
+        "SELECT COUNT(*) FROM BSB_books"
+    ).fetchone()[0]
+    verse_count = connection.execute(
+        "SELECT COUNT(*) FROM BSB_verses"
+    ).fetchone()[0]
+
+    if book_count != 66:
+        raise SystemExit(f"Expected 66 BSB books, found {book_count}")
+    if verse_count < 31_000:
+        raise SystemExit(
+            f"Expected a complete BSB Bible, found only {verse_count} verses"
+        )
+
     duplicate_count = connection.execute(
-        "SELECT COUNT(*) FROM (SELECT book_name, chapter, verse, COUNT(*) c "
-        "FROM verses GROUP BY book_name, chapter, verse HAVING c > 1)"
+        """
+        SELECT COUNT(*)
+        FROM (
+            SELECT book_id, chapter, verse, COUNT(*) AS count
+            FROM BSB_verses
+            GROUP BY book_id, chapter, verse
+            HAVING count > 1
+        )
+        """
     ).fetchone()[0]
     if duplicate_count:
-        raise SystemExit(f"Bible database has {duplicate_count} duplicate references")
+        raise SystemExit(
+            f"BSB database has {duplicate_count} duplicate verse references"
+        )
+
     available = {
         f"{book} {chapter}:{verse}"
         for book, chapter, verse in connection.execute(
-            "SELECT book_name, chapter, verse FROM verses"
+            """
+            SELECT b.name, v.chapter, v.verse
+            FROM BSB_verses AS v
+            INNER JOIN BSB_books AS b ON b.id = v.book_id
+            """
         )
     }
 finally:
     connection.close()
 
-plans = json.loads((ASSETS / "curated_daily_verses.json").read_text(encoding="utf-8"))
+plans = json.loads(READINGS_PATH.read_text(encoding="utf-8"))
 if plans.get("translation") != "BSB":
     raise SystemExit("curated_daily_verses.json must declare translation BSB")
+
 readings = plans.get("readings", [])
 if len(readings) < 365:
-    raise SystemExit(f"Expected at least 365 curated daily readings, found {len(readings)}")
+    raise SystemExit(
+        f"Expected at least 365 curated daily readings, found {len(readings)}"
+    )
 
-main_refs = []
+main_references = []
 for index, reading in enumerate(readings):
     main = reading.get("main")
     related = reading.get("related")
     themes = reading.get("themes")
-    if (
-        not isinstance(main, str)
-        or not isinstance(related, list)
-        or len(related) != 3
-        or not isinstance(themes, list)
-        or not themes
-    ):
-        raise SystemExit(f"Invalid curated daily reading at index {index}")
-    missing_refs = [ref for ref in [main, *related] if ref not in available]
-    if missing_refs:
-        raise SystemExit(
-            f"Curated reading {index} references missing BSB verses: {missing_refs}"
-        )
-    main_refs.append(main)
 
-if len(set(main_refs)) != len(main_refs):
+    if not isinstance(main, str):
+        raise SystemExit(f"Reading {index} has an invalid main reference")
+    if not isinstance(related, list) or len(related) != 3:
+        raise SystemExit(f"Reading {index} must contain exactly three related verses")
+    if not isinstance(themes, list) or not themes:
+        raise SystemExit(f"Reading {index} must contain at least one theme")
+
+    missing_references = [
+        reference
+        for reference in [main, *related]
+        if reference not in available
+    ]
+    if missing_references:
+        raise SystemExit(
+            f"Reading {index} references missing BSB verses: "
+            f"{missing_references}"
+        )
+
+    main_references.append(main)
+
+if len(set(main_references)) != len(main_references):
     raise SystemExit("Curated daily main references are not unique")
 
 source = "\n".join(
     path.read_text(encoding="utf-8")
     for path in ROOT.glob("app/src/main/java/**/*.kt")
 )
-for token in [
+for token in (
     "Screen.CHAPTER",
     "BibleRepository.chapter",
     "dpm.lockNow()",
     "Screen.DAILY_VERSE",
     '"bsb.sqlite"',
-]:
+    '"BSB_books"',
+    '"BSB_verses"',
+):
     if token not in source:
         raise SystemExit(f"Required source feature missing: {token}")
 
-if "King James Version" in source or '"kjv.sqlite"' in source:
-    raise SystemExit("Stale KJV source reference remains")
+for stale_token in ("King James Version", '"kjv.sqlite"', 'FROM verses'):
+    if stale_token in source:
+        raise SystemExit(f"Stale Bible implementation remains: {stale_token}")
 
 print(f"Validated {len(required)} required files.")
 print("All Android XML resources are well formed.")
-print(f"BSB SQLite database integrity: OK ({verse_count:,} verses).")
+print(
+    f"BSB SQLite database integrity: OK "
+    f"({book_count} books, {verse_count:,} verses)."
+)
 print(
     f"Curated daily readings: {len(readings)} unique main references; "
     "every reference resolves locally."
 )
-print("Full-chapter viewing, idle lock, and double-tap lock source checks: present.")
+print("Full-chapter viewing and double-tap lock source checks: present.")
