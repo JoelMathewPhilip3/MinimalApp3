@@ -12,8 +12,8 @@ android {
         applicationId = "com.joel.minimallauncher"
         minSdk = 26
         targetSdk = 36
-        versionCode = 9
-        versionName = "8.1.0"
+        versionCode = 10
+        versionName = "9.0.0"
     }
 
     buildTypes {
@@ -66,12 +66,12 @@ dependencies {
 
 val verifyBibleAssets by tasks.registering {
     group = "verification"
-    description = "Requires the bundled full KJV database and curated daily verse library."
+    description = "Requires the bundled full BSB database and curated daily verse library."
     doLast {
-        val database = file("src/main/assets/kjv.sqlite")
+        val database = file("src/main/assets/bsb.sqlite")
         val plans = file("src/main/assets/curated_daily_verses.json")
-        require(database.exists() && database.length() > 5_000_000L) {
-            "Missing or incomplete src/main/assets/kjv.sqlite"
+        require(database.exists() && database.length() > 4_000_000L) {
+            "Missing or incomplete src/main/assets/bsb.sqlite"
         }
         require(plans.exists()) { "Missing src/main/assets/curated_daily_verses.json" }
         val text = plans.readText()
