@@ -3,6 +3,7 @@ package com.joel.minimallauncher.data
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -22,6 +23,7 @@ class SettingsRepository(private val context: Context) {
         val reduceGestures = booleanPreferencesKey("reduce_gestures")
         val hapticFeedback = booleanPreferencesKey("haptic_feedback")
         val doubleTapLock = booleanPreferencesKey("double_tap_lock")
+        val launcherIdleLockSeconds = intPreferencesKey("launcher_idle_lock_seconds")
         val showMorningReading = booleanPreferencesKey("show_morning_reading")
         val onboardingComplete = booleanPreferencesKey("onboarding_complete")
     }
@@ -36,6 +38,7 @@ class SettingsRepository(private val context: Context) {
         reduceGestures = prefs[Keys.reduceGestures] ?: false,
         hapticFeedback = prefs[Keys.hapticFeedback] ?: true,
         doubleTapLock = prefs[Keys.doubleTapLock] ?: false,
+        launcherIdleLockSeconds = (prefs[Keys.launcherIdleLockSeconds] ?: 0).takeIf { it in setOf(0, 15, 30, 60) } ?: 0,
         showMorningReading = prefs[Keys.showMorningReading] ?: true,
         onboardingComplete = prefs[Keys.onboardingComplete] ?: false
     )
@@ -64,6 +67,9 @@ class SettingsRepository(private val context: Context) {
     suspend fun setReduceGestures(value: Boolean) = context.dataStore.edit { it[Keys.reduceGestures] = value }
     suspend fun setHapticFeedback(value: Boolean) = context.dataStore.edit { it[Keys.hapticFeedback] = value }
     suspend fun setDoubleTapLock(value: Boolean) = context.dataStore.edit { it[Keys.doubleTapLock] = value }
+    suspend fun setLauncherIdleLockSeconds(value: Int) = context.dataStore.edit {
+        it[Keys.launcherIdleLockSeconds] = value.takeIf { seconds -> seconds in setOf(0, 15, 30, 60) } ?: 0
+    }
     suspend fun setShowMorningReading(value: Boolean) = context.dataStore.edit { it[Keys.showMorningReading] = value }
     suspend fun completeOnboarding() = context.dataStore.edit { it[Keys.onboardingComplete] = true }
 
