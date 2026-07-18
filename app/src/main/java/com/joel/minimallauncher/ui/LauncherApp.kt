@@ -18,6 +18,9 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,6 +64,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -72,8 +76,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.onClick
@@ -88,6 +94,8 @@ import com.joel.minimallauncher.verse.BibleChapter
 import com.joel.minimallauncher.verse.BibleRepository
 import com.joel.minimallauncher.verse.DailyReading
 import com.joel.minimallauncher.verse.DailyVerseRepository
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import kotlinx.coroutines.delay
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -116,12 +124,30 @@ private fun LauncherContent(viewModel: LauncherViewModel, state: LauncherUiState
     var selectedApp by remember { mutableStateOf<AppEntry?>(null) }
     var failedApp by remember { mutableStateOf<AppEntry?>(null) }
     var selectedChapterReference by remember { mutableStateOf<String?>(null) }
+    var pendingIdleLockSeconds by remember { mutableStateOf<Int?>(null) }
+    var interactionKey by remember { mutableStateOf(0L) }
+    var isResumed by remember { mutableStateOf(false) }
+
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            isResumed = event == Lifecycle.Event.ON_RESUME ||
+                (event != Lifecycle.Event.ON_PAUSE && lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED))
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        isResumed = lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
 
     val dpm = remember { context.getSystemService(DevicePolicyManager::class.java) }
     val adminComponent = remember { ComponentName(context, LauncherDeviceAdminReceiver::class.java) }
 
     val adminLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        viewModel.setDoubleTapLock(dpm.isAdminActive(adminComponent))
+        val active = dpm.isAdminActive(adminComponent)
+        pendingIdleLockSeconds?.let { requested ->
+            viewModel.setLauncherIdleLockSeconds(if (active) requested else 0)
+            pendingIdleLockSeconds = null
+        } ?: viewModel.setDoubleTapLock(active)
     }
 
     LaunchedEffect(Unit) { viewModel.loadApps() }
@@ -131,6 +157,23 @@ private fun LauncherContent(viewModel: LauncherViewModel, state: LauncherUiState
         selectedApp = null
         failedApp = null
         selectedChapterReference = null
+        interactionKey++
+    }
+
+    val idleLockEligible = screen == Screen.DAILY_VERSE || screen == Screen.FAVORITES_HOME
+    LaunchedEffect(
+        state.settings.launcherIdleLockSeconds,
+        interactionKey,
+        idleLockEligible,
+        isResumed,
+        homeRequestKey
+    ) {
+        val timeout = state.settings.launcherIdleLockSeconds
+        if (timeout <= 0 || !idleLockEligible || !isResumed || !dpm.isAdminActive(adminComponent)) return@LaunchedEffect
+        delay(timeout * 1_000L)
+        if (isResumed && idleLockEligible && dpm.isAdminActive(adminComponent)) {
+            runCatching { dpm.lockNow() }
+        }
     }
 
     BackHandler(enabled = screen != Screen.DAILY_VERSE || state.query.isNotBlank()) {
@@ -145,7 +188,20 @@ private fun LauncherContent(viewModel: LauncherViewModel, state: LauncherUiState
     }
 
     Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
-        Box(Modifier.fillMaxSize().padding(padding).statusBarsPadding().navigationBarsPadding()) {
+        Box(
+            Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .statusBarsPadding()
+                .navigationBarsPadding()
+                .pointerInput(Unit) {
+                    awaitEachGesture {
+                        awaitFirstDown(pass = PointerEventPass.Final)
+                        interactionKey++
+                        waitForUpOrCancellation(pass = PointerEventPass.Final)
+                    }
+                }
+        ) {
             when (screen) {
                 Screen.DAILY_VERSE -> DailyVerseScreen(
                     state = state,
@@ -191,6 +247,20 @@ private fun LauncherContent(viewModel: LauncherViewModel, state: LauncherUiState
                     onMinimal = viewModel::setMinimalMode,
                     onShowMorningReading = viewModel::setShowMorningReading,
                     onHomeSettings = { context.startActivity(Intent(Settings.ACTION_HOME_SETTINGS)) },
+                    onLauncherIdleLock = { seconds ->
+                        if (seconds == 0) {
+                            viewModel.setLauncherIdleLockSeconds(0)
+                        } else if (dpm.isAdminActive(adminComponent)) {
+                            viewModel.setLauncherIdleLockSeconds(seconds)
+                        } else {
+                            pendingIdleLockSeconds = seconds
+                            val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN).apply {
+                                putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminComponent)
+                                putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Enable launcher idle lock after a period of inactivity.")
+                            }
+                            adminLauncher.launch(intent)
+                        }
+                    },
                     onDoubleTapLock = { enabled ->
                         if (!enabled) viewModel.setDoubleTapLock(false)
                         else if (dpm.isAdminActive(adminComponent)) viewModel.setDoubleTapLock(true)
@@ -642,7 +712,20 @@ private fun Header(title: String, onBack: () -> Unit, trailing: (@Composable () 
 }
 
 @Composable
-private fun SettingsScreen(state: LauncherUiState, adminActive: Boolean, onBack: () -> Unit, onFavorites: () -> Unit, onAccessibility: () -> Unit, onMinimal: (Boolean) -> Unit, onShowMorningReading: (Boolean) -> Unit, onHomeSettings: () -> Unit, onDoubleTapLock: (Boolean) -> Unit) {
+private fun SettingsScreen(
+    state: LauncherUiState,
+    adminActive: Boolean,
+    onBack: () -> Unit,
+    onFavorites: () -> Unit,
+    onAccessibility: () -> Unit,
+    onMinimal: (Boolean) -> Unit,
+    onShowMorningReading: (Boolean) -> Unit,
+    onHomeSettings: () -> Unit,
+    onLauncherIdleLock: (Int) -> Unit,
+    onDoubleTapLock: (Boolean) -> Unit
+) {
+    var showIdleLockChoices by remember { mutableStateOf(false) }
+
     LazyColumn(Modifier.fillMaxSize().padding(horizontal = 20.dp, vertical = 12.dp)) {
         item { Header("Settings", onBack) }
         item { Section("Home") }
@@ -652,6 +735,16 @@ private fun SettingsScreen(state: LauncherUiState, adminActive: Boolean, onBack:
         item { ToggleRow("Morning reading", "Show three related KJV passages below the verse of the day.", state.settings.showMorningReading, onShowMorningReading) }
         item { Text("Swipe left from Home or tap the Bible icon to open today's reading. The verse changes once per calendar day without background work.", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(vertical = 8.dp)) }
         item { Section("Screen") }
+        item {
+            SettingRow(
+                "Launcher idle lock",
+                if (!adminActive && state.settings.launcherIdleLockSeconds > 0)
+                    "Device Administrator access is required."
+                else
+                    "Locks only while the Daily Verse or Favourites page is idle: ${idleLockLabel(state.settings.launcherIdleLockSeconds)}.",
+                { showIdleLockChoices = true }
+            )
+        }
         item { ToggleRow("Double-tap to lock", if (adminActive) "Double-tap an empty area on Home to turn off and lock the screen." else "Requires optional Device Administrator access.", state.settings.doubleTapLock && adminActive, onDoubleTapLock) }
         item { Section("Accessibility") }
         item { SettingRow("Accessibility options", "Text, contrast, gesture alternatives, haptics, and accessibility guidance.", onAccessibility) }
@@ -659,6 +752,47 @@ private fun SettingsScreen(state: LauncherUiState, adminActive: Boolean, onBack:
         item { SettingRow("Choose default home app", "Open Android home-app settings.", onHomeSettings) }
         item { Spacer(Modifier.height(24.dp)); Text("Pressing the system Home button always returns to this Home screen.", color = MaterialTheme.colorScheme.onSurfaceVariant) }
     }
+
+    if (showIdleLockChoices) {
+        AlertDialog(
+            onDismissRequest = { showIdleLockChoices = false },
+            title = { Text("Launcher idle lock") },
+            text = {
+                Column {
+                    Text(
+                        "The timer runs only while the Daily Verse or Favourites page is visible. Touching the screen resets it, and opening another app stops it.",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.height(12.dp))
+                    listOf(0, 15, 30, 60).forEach { seconds ->
+                        TextButton(
+                            onClick = {
+                                showIdleLockChoices = false
+                                onLauncherIdleLock(seconds)
+                            },
+                            modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)
+                        ) {
+                            Text(
+                                if (seconds == state.settings.launcherIdleLockSeconds)
+                                    "✓ ${idleLockLabel(seconds)}"
+                                else
+                                    idleLockLabel(seconds),
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
+                    }
+                }
+            },
+            confirmButton = { TextButton(onClick = { showIdleLockChoices = false }) { Text("Close") } }
+        )
+    }
+}
+
+private fun idleLockLabel(seconds: Int): String = when (seconds) {
+    15 -> "15 seconds"
+    30 -> "30 seconds"
+    60 -> "1 minute"
+    else -> "Off"
 }
 
 @Composable
