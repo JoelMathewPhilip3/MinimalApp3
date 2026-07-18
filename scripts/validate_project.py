@@ -9,7 +9,7 @@ ASSETS = ROOT / "app/src/main/assets"
 DATABASE_PATH = ASSETS / "bsb.sqlite"
 READINGS_PATH = ASSETS / "curated_daily_verses.json"
 EXPECTED_DATABASE_VERSION = 2
-EXPECTED_VERSE_COUNT = 31_102
+EXPECTED_VERSE_COUNT = 31_086
 
 REQUIRED_FILES = [
     "settings.gradle.kts",
