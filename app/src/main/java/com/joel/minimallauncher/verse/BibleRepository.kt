@@ -50,7 +50,7 @@ object BibleRepository {
             val verses = buildList {
                 db.rawQuery(
                     """
-                    SELECT v.verse, v.text
+                    SELECT DISTINCT v.verse, v.text
                     FROM $VERSES_TABLE AS v
                     INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
                     WHERE b.name = ? COLLATE NOCASE
@@ -84,7 +84,16 @@ object BibleRepository {
 
     suspend fun verseCount(context: Context): Int = withContext(Dispatchers.IO) {
         val db = openDatabase(context.applicationContext)
-        db.rawQuery("SELECT COUNT(*) FROM $VERSES_TABLE", null).use { cursor ->
+        db.rawQuery(
+            """
+            SELECT COUNT(*)
+            FROM (
+                SELECT DISTINCT book_id, chapter, verse, text
+                FROM $VERSES_TABLE
+            )
+            """.trimIndent(),
+            null
+        ).use { cursor ->
             check(cursor.moveToFirst()) { "Unable to count BSB verses" }
             cursor.getInt(0)
         }
@@ -99,7 +108,7 @@ object BibleRepository {
 
         db.rawQuery(
             """
-            SELECT v.text
+            SELECT DISTINCT v.text
             FROM $VERSES_TABLE AS v
             INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
             WHERE b.name = ? COLLATE NOCASE
