@@ -12,58 +12,98 @@ data class DailyReading(
     val related: List<BiblePassage>
 )
 
-private data class DailyReadingReferences(
+private data class CuratedDailyReading(
     val main: String,
-    val related: List<String>
+    val related: List<String>,
+    val themes: List<String>
 )
 
 object DailyVerseRepository {
-    private const val ASSET_NAME = "daily_reading_refs.json"
-    private const val EXPECTED_READING_COUNT = 1_095
+    private const val ASSET_NAME = "curated_daily_verses.json"
+    private const val MINIMUM_READING_COUNT = 365
 
-    @Volatile private var cachedReferences: List<DailyReadingReferences>? = null
+    @Volatile
+    private var cachedReadings: List<CuratedDailyReading>? = null
 
     suspend fun readingFor(context: Context, date: LocalDate): DailyReading {
-        val references = loadReferences(context)
-        val base = Math.floorMod(date.toEpochDay(), references.size.toLong()).toInt()
-        // 437 is coprime with 1,095, so each plan is used once before the cycle repeats.
-        val index = Math.floorMod(base * 437 + 211, references.size)
-        val plan = references[index]
-        val passages = BibleRepository.passages(context, listOf(plan.main) + plan.related)
-        return DailyReading(main = passages.first(), related = passages.drop(1))
+        val readings = loadReadings(context)
+
+        // The asset is deliberately ordered to alternate books and themes.
+        // Using the calendar day directly keeps the same verse for the whole day,
+        // gives predictable seven-day history, and avoids repeats until the full
+        // curated list has been used.
+        val index = Math.floorMod(date.toEpochDay(), readings.size.toLong()).toInt()
+        val selected = readings[index]
+
+        val passages = BibleRepository.passages(
+            context,
+            listOf(selected.main) + selected.related
+        )
+
+        return DailyReading(
+            main = passages.first(),
+            related = passages.drop(1)
+        )
     }
 
-    fun size(context: Context): Int = loadReferencesBlocking(context).size
+    fun size(context: Context): Int = loadReadingsBlocking(context).size
 
-    private suspend fun loadReferences(context: Context): List<DailyReadingReferences> =
-        withContext(Dispatchers.IO) { loadReferencesBlocking(context) }
+    private suspend fun loadReadings(context: Context): List<CuratedDailyReading> =
+        withContext(Dispatchers.IO) {
+            loadReadingsBlocking(context.applicationContext)
+        }
 
-    private fun loadReferencesBlocking(context: Context): List<DailyReadingReferences> {
-        cachedReferences?.let { return it }
+    private fun loadReadingsBlocking(context: Context): List<CuratedDailyReading> {
+        cachedReadings?.let { return it }
+
         return synchronized(this) {
-            cachedReferences ?: readAsset(context.applicationContext).also { cachedReferences = it }
+            cachedReadings ?: readAsset(context.applicationContext).also {
+                cachedReadings = it
+            }
         }
     }
 
-    private fun readAsset(context: Context): List<DailyReadingReferences> {
-        val json = context.assets.open(ASSET_NAME).bufferedReader().use { it.readText() }
+    private fun readAsset(context: Context): List<CuratedDailyReading> {
+        val json = context.assets.open(ASSET_NAME)
+            .bufferedReader()
+            .use { it.readText() }
+
         val root = JSONObject(json)
         val array = root.getJSONArray("readings")
-        require(array.length() == EXPECTED_READING_COUNT) {
-            "Daily reading reference library is incomplete: expected $EXPECTED_READING_COUNT, found ${array.length()}."
+
+        require(array.length() >= MINIMUM_READING_COUNT) {
+            "Curated daily verse library is incomplete: expected at least " +
+                "$MINIMUM_READING_COUNT readings, found ${array.length()}."
         }
-        return buildList(array.length()) {
+
+        val readings = buildList(array.length()) {
             repeat(array.length()) { index ->
                 val item = array.getJSONObject(index)
                 val relatedArray = item.getJSONArray("related")
-                require(relatedArray.length() == 3) { "Reading $index must contain three related references" }
+                val themesArray = item.optJSONArray("themes")
+
+                require(relatedArray.length() == 3) {
+                    "Curated reading $index must contain exactly three related references."
+                }
+
                 add(
-                    DailyReadingReferences(
+                    CuratedDailyReading(
                         main = item.getString("main"),
-                        related = List(3) { relatedArray.getString(it) }
+                        related = List(3) { relatedArray.getString(it) },
+                        themes = if (themesArray == null) {
+                            emptyList()
+                        } else {
+                            List(themesArray.length()) { themesArray.getString(it) }
+                        }
                     )
                 )
             }
         }
+
+        require(readings.map { it.main }.distinct().size == readings.size) {
+            "Curated daily verse library contains duplicate main references."
+        }
+
+        return readings
     }
 }
