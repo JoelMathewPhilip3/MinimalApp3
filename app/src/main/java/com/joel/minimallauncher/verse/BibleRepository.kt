@@ -23,86 +23,76 @@ data class BibleChapter(
 object BibleRepository {
     private const val ASSET_NAME = "bsb.sqlite"
     private const val DATABASE_NAME = "bsb.sqlite"
-    private const val BOOKS_TABLE = "BSB_books"
-    private const val VERSES_TABLE = "BSB_verses"
+    private const val DATABASE_VERSION = 2
+    private const val VERSES_TABLE = "verses"
 
     @Volatile
     private var database: SQLiteDatabase? = null
 
-    suspend fun passage(context: Context, reference: String): BiblePassage =
-        withContext(Dispatchers.IO) {
-            passageInternal(openDatabase(context.applicationContext), reference)
-        }
+    suspend fun passage(
+        context: Context,
+        reference: String
+    ): BiblePassage = withContext(Dispatchers.IO) {
+        passageInternal(
+            db = openDatabase(context.applicationContext),
+            reference = reference
+        )
+    }
 
     suspend fun passages(
         context: Context,
         references: List<String>
     ): List<BiblePassage> = withContext(Dispatchers.IO) {
         val db = openDatabase(context.applicationContext)
-        references.map { reference -> passageInternal(db, reference) }
+        references.map { reference ->
+            passageInternal(db = db, reference = reference)
+        }
     }
 
-    suspend fun chapter(context: Context, reference: String): BibleChapter =
-        withContext(Dispatchers.IO) {
-            val parsed = parseReference(reference)
-            val databaseBookName = normalizeBookName(parsed.book)
-            val db = openDatabase(context.applicationContext)
+    suspend fun chapter(
+        context: Context,
+        reference: String
+    ): BibleChapter = withContext(Dispatchers.IO) {
+        val parsed = parseReference(reference)
+        val bookName = normalizeBookName(parsed.book)
+        val db = openDatabase(context.applicationContext)
 
-            val verses = buildList {
-                db.rawQuery(
-                    """
-                    SELECT v.verse, v.text
-                    FROM $VERSES_TABLE AS v
-                    INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
-                    WHERE b.name = ? COLLATE NOCASE
-                      AND v.chapter = ?
-                      AND v.id = (
-                          SELECT MIN(v2.id)
-                          FROM $VERSES_TABLE AS v2
-                          WHERE v2.book_id = v.book_id
-                            AND v2.chapter = v.chapter
-                            AND v2.verse = v.verse
-                      )
-                    ORDER BY v.verse ASC
-                    """.trimIndent(),
-                    arrayOf(databaseBookName, parsed.chapter.toString())
-                ).use { cursor ->
-                    while (cursor.moveToNext()) {
-                        val verseNumber = cursor.getInt(0)
-                        add(
-                            BiblePassage(
-                                reference = "${parsed.book} ${parsed.chapter}:$verseNumber",
-                                text = cursor.getString(1).trim()
-                            )
+        val verses = buildList {
+            db.query(
+                VERSES_TABLE,
+                arrayOf("verse", "text"),
+                "book_name = ? COLLATE NOCASE AND chapter = ?",
+                arrayOf(bookName, parsed.chapter.toString()),
+                null,
+                null,
+                "verse ASC"
+            ).use { cursor ->
+                while (cursor.moveToNext()) {
+                    val verseNumber = cursor.getInt(0)
+                    add(
+                        BiblePassage(
+                            reference = "$bookName ${parsed.chapter}:$verseNumber",
+                            text = cursor.getString(1).trim()
                         )
-                    }
+                    )
                 }
             }
-
-            require(verses.isNotEmpty()) {
-                "Bible chapter not found: ${parsed.book} ${parsed.chapter}"
-            }
-
-            BibleChapter(
-                bookName = parsed.book,
-                chapter = parsed.chapter,
-                verses = verses
-            )
         }
+
+        require(verses.isNotEmpty()) {
+            "Bible chapter not found: $bookName ${parsed.chapter}"
+        }
+
+        BibleChapter(
+            bookName = bookName,
+            chapter = parsed.chapter,
+            verses = verses
+        )
+    }
 
     suspend fun verseCount(context: Context): Int = withContext(Dispatchers.IO) {
         val db = openDatabase(context.applicationContext)
-        db.rawQuery(
-            """
-            SELECT COUNT(*)
-            FROM (
-                SELECT book_id, chapter, verse
-                FROM $VERSES_TABLE
-                GROUP BY book_id, chapter, verse
-            )
-            """.trimIndent(),
-            null
-        ).use { cursor ->
+        db.rawQuery("SELECT COUNT(*) FROM $VERSES_TABLE", null).use { cursor ->
             check(cursor.moveToFirst()) { "Unable to count BSB verses" }
             cursor.getInt(0)
         }
@@ -113,73 +103,101 @@ object BibleRepository {
         reference: String
     ): BiblePassage {
         val parsed = parseReference(reference)
-        val databaseBookName = normalizeBookName(parsed.book)
+        val bookName = normalizeBookName(parsed.book)
 
-        db.rawQuery(
-            """
-            SELECT v.text
-            FROM $VERSES_TABLE AS v
-            INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
-            WHERE b.name = ? COLLATE NOCASE
-              AND v.chapter = ?
-              AND v.verse = ?
-            ORDER BY v.id ASC
-            LIMIT 1
-            """.trimIndent(),
+        db.query(
+            VERSES_TABLE,
+            arrayOf("text"),
+            "book_name = ? COLLATE NOCASE AND chapter = ? AND verse = ?",
             arrayOf(
-                databaseBookName,
+                bookName,
                 parsed.chapter.toString(),
                 parsed.verse.toString()
-            )
+            ),
+            null,
+            null,
+            null,
+            "1"
         ).use { cursor ->
             require(cursor.moveToFirst()) {
                 "Bible reference not found: $reference"
             }
             return BiblePassage(
-                reference = reference,
+                reference = "$bookName ${parsed.chapter}:${parsed.verse}",
                 text = cursor.getString(0).trim()
             )
         }
     }
 
     private fun openDatabase(context: Context): SQLiteDatabase {
-        database?.takeIf { it.isOpen && hasRequiredSchema(it) }?.let { return it }
+        database
+            ?.takeIf { it.isOpen && hasExpectedDatabase(it) }
+            ?.let { return it }
 
         return synchronized(this) {
-            database?.takeIf { it.isOpen && hasRequiredSchema(it) } ?: run {
-                database?.close()
-                database = null
+            database
+                ?.takeIf { it.isOpen && hasExpectedDatabase(it) }
+                ?: run {
+                    database?.close()
+                    database = null
 
-                val destination = File(context.noBackupFilesDir, DATABASE_NAME)
-                if (!destination.isFile || destination.length() == 0L) {
-                    copyDatabaseFromAssets(context, destination)
+                    val destination = File(
+                        context.noBackupFilesDir,
+                        DATABASE_NAME
+                    )
+
+                    var opened = openOrReplaceDatabase(
+                        context = context,
+                        destination = destination
+                    )
+
+                    if (!hasExpectedDatabase(opened)) {
+                        opened.close()
+                        destination.delete()
+                        copyDatabaseFromAssets(context, destination)
+                        opened = openReadOnly(destination)
+                    }
+
+                    check(hasExpectedDatabase(opened)) {
+                        "Bundled BSB database is missing the clean verses schema"
+                    }
+
+                    opened.also { database = it }
                 }
-
-                var opened = openReadOnly(destination)
-
-                if (!hasRequiredSchema(opened)) {
-                    opened.close()
-                    destination.delete()
-                    copyDatabaseFromAssets(context, destination)
-                    opened = openReadOnly(destination)
-                }
-
-                check(hasRequiredSchema(opened)) {
-                    "Bundled BSB database is missing $BOOKS_TABLE or $VERSES_TABLE"
-                }
-
-                opened.also { database = it }
-            }
         }
     }
 
-    private fun copyDatabaseFromAssets(context: Context, destination: File) {
+    private fun openOrReplaceDatabase(
+        context: Context,
+        destination: File
+    ): SQLiteDatabase {
+        if (!destination.isFile || destination.length() == 0L) {
+            copyDatabaseFromAssets(context, destination)
+        }
+
+        val opened = runCatching { openReadOnly(destination) }.getOrNull()
+        if (opened != null && hasExpectedDatabase(opened)) {
+            return opened
+        }
+
+        opened?.close()
+        destination.delete()
+        copyDatabaseFromAssets(context, destination)
+        return openReadOnly(destination)
+    }
+
+    private fun copyDatabaseFromAssets(
+        context: Context,
+        destination: File
+    ) {
         destination.parentFile?.mkdirs()
         val temporary = File(destination.parentFile, "$DATABASE_NAME.tmp")
         temporary.delete()
 
         context.assets.open(ASSET_NAME).use { input ->
-            temporary.outputStream().use { output -> input.copyTo(output) }
+            temporary.outputStream().use { output ->
+                input.copyTo(output)
+            }
         }
 
         if (!temporary.renameTo(destination)) {
@@ -192,19 +210,38 @@ object BibleRepository {
         SQLiteDatabase.openDatabase(
             file.absolutePath,
             null,
-            SQLiteDatabase.OPEN_READONLY or SQLiteDatabase.NO_LOCALIZED_COLLATORS
+            SQLiteDatabase.OPEN_READONLY or
+                SQLiteDatabase.NO_LOCALIZED_COLLATORS
         )
 
-    private fun hasRequiredSchema(db: SQLiteDatabase): Boolean {
-        val required = setOf(BOOKS_TABLE, VERSES_TABLE)
-        val found = mutableSetOf<String>()
-        db.rawQuery(
-            "SELECT name FROM sqlite_master WHERE type = 'table' AND name IN (?, ?)",
-            arrayOf(BOOKS_TABLE, VERSES_TABLE)
-        ).use { cursor ->
-            while (cursor.moveToNext()) found += cursor.getString(0)
+    private fun hasExpectedDatabase(db: SQLiteDatabase): Boolean {
+        if (db.version != DATABASE_VERSION) return false
+
+        val found = db.rawQuery(
+            "SELECT name FROM sqlite_master " +
+                "WHERE type = 'table' AND name = ?",
+            arrayOf(VERSES_TABLE)
+        ).use { cursor -> cursor.moveToFirst() }
+
+        if (!found) return false
+
+        val columns = mutableSetOf<String>()
+        db.rawQuery("PRAGMA table_info($VERSES_TABLE)", null).use { cursor ->
+            val nameIndex = cursor.getColumnIndex("name")
+            while (cursor.moveToNext()) {
+                columns += cursor.getString(nameIndex)
+            }
         }
-        return found == required
+
+        return columns.containsAll(
+            setOf(
+                "book_number",
+                "book_name",
+                "chapter",
+                "verse",
+                "text"
+            )
+        )
     }
 
     private data class ParsedReference(
