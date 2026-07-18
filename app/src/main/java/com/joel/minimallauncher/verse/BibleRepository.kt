@@ -47,14 +47,22 @@ object BibleRepository {
             val parsed = parseReference(reference)
             val databaseBookName = normalizeBookName(parsed.book)
             val db = openDatabase(context.applicationContext)
+
             val verses = buildList {
                 db.rawQuery(
                     """
-                    SELECT DISTINCT v.verse, v.text
+                    SELECT v.verse, v.text
                     FROM $VERSES_TABLE AS v
                     INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
                     WHERE b.name = ? COLLATE NOCASE
                       AND v.chapter = ?
+                      AND v.id = (
+                          SELECT MIN(v2.id)
+                          FROM $VERSES_TABLE AS v2
+                          WHERE v2.book_id = v.book_id
+                            AND v2.chapter = v.chapter
+                            AND v2.verse = v.verse
+                      )
                     ORDER BY v.verse ASC
                     """.trimIndent(),
                     arrayOf(databaseBookName, parsed.chapter.toString())
@@ -64,7 +72,7 @@ object BibleRepository {
                         add(
                             BiblePassage(
                                 reference = "${parsed.book} ${parsed.chapter}:$verseNumber",
-                                text = cursor.getString(1)
+                                text = cursor.getString(1).trim()
                             )
                         )
                     }
@@ -88,8 +96,9 @@ object BibleRepository {
             """
             SELECT COUNT(*)
             FROM (
-                SELECT DISTINCT book_id, chapter, verse, text
+                SELECT book_id, chapter, verse
                 FROM $VERSES_TABLE
+                GROUP BY book_id, chapter, verse
             )
             """.trimIndent(),
             null
@@ -108,12 +117,13 @@ object BibleRepository {
 
         db.rawQuery(
             """
-            SELECT DISTINCT v.text
+            SELECT v.text
             FROM $VERSES_TABLE AS v
             INNER JOIN $BOOKS_TABLE AS b ON b.id = v.book_id
             WHERE b.name = ? COLLATE NOCASE
               AND v.chapter = ?
               AND v.verse = ?
+            ORDER BY v.id ASC
             LIMIT 1
             """.trimIndent(),
             arrayOf(
@@ -125,7 +135,10 @@ object BibleRepository {
             require(cursor.moveToFirst()) {
                 "Bible reference not found: $reference"
             }
-            return BiblePassage(reference = reference, text = cursor.getString(0))
+            return BiblePassage(
+                reference = reference,
+                text = cursor.getString(0).trim()
+            )
         }
     }
 
@@ -144,8 +157,6 @@ object BibleRepository {
 
                 var opened = openReadOnly(destination)
 
-                // If an older incompatible database was copied by a previous build,
-                // replace it with the database bundled in the current APK.
                 if (!hasRequiredSchema(opened)) {
                     opened.close()
                     destination.delete()
