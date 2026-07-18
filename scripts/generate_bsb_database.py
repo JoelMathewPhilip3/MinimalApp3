@@ -2,7 +2,7 @@
 """Generate a clean offline Berean Standard Bible SQLite asset.
 
 Input: the official public-domain engbsb_usfm.zip archive from eBible.org.
-Output: app/src/main/assets/bsb.sqlite with exactly one row per canonical verse.
+Output: app/src/main/assets/bsb.sqlite with one row per BSB verse record.
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Iterator
 
 DATABASE_VERSION = 2
-EXPECTED_VERSE_COUNT = 31_102
+EXPECTED_VERSE_COUNT = 31_086
 
 BOOKS: dict[str, tuple[int, str]] = {
     "GEN": (1, "Genesis"),
@@ -179,10 +179,13 @@ def parse_usfm_file(path: Path) -> Iterator[tuple[int, str, int, int, str]]:
             chapter = int(chapter_match.group(1))
             continue
 
-        # BSB USFM uses ordinary integer verse labels. Optional letter suffixes
-        # are accepted, but merged verse ranges are deliberately rejected by
-        # the final exact-count and uniqueness validation below.
-        verse_match = re.match(r"^\\v\s+(\d+)(?:[a-z])?\s*(.*)$", line)
+        # BSB contains a small number of bridged verse labels such as 8-9.
+        # The BSB source counts the bridge as one verse record. Store it under
+        # the first verse number while stripping the range from the text.
+        verse_match = re.match(
+            r"^\\v\s+(\d+)(?:[a-z])?(?:-\d+(?:[a-z])?)?\s*(.*)$",
+            line,
+        )
         if verse_match:
             previous = flush()
             if previous is not None:
@@ -309,7 +312,7 @@ def build_database(input_zip: Path, output: Path) -> None:
                 ("title", "Berean Standard Bible"),
                 ("source", "eBible.org engbsb_usfm.zip"),
                 ("license", "Public Domain / CC0"),
-                ("verse_count", str(EXPECTED_VERSE_COUNT)),
+                ("verse_record_count", str(EXPECTED_VERSE_COUNT)),
                 ("database_version", str(DATABASE_VERSION)),
             ],
         )
@@ -330,7 +333,7 @@ def build_database(input_zip: Path, output: Path) -> None:
 
     print(
         f"Generated {output} with {EXPECTED_VERSE_COUNT:,} "
-        "unique Berean Standard Bible verses"
+        "Berean Standard Bible verse records"
     )
 
 
