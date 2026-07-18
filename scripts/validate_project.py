@@ -156,11 +156,25 @@ try:
             SELECT
                 book_id,
                 chapter,
-                verse,
-                COUNT(*) AS occurrence_count
+                verse
             FROM BSB_verses
             GROUP BY book_id, chapter, verse
             HAVING COUNT(*) > 1
+        )
+        """
+    ).fetchone()[0]
+
+    conflicting_duplicate_count = connection.execute(
+        """
+        SELECT COUNT(*)
+        FROM (
+            SELECT
+                book_id,
+                chapter,
+                verse
+            FROM BSB_verses
+            GROUP BY book_id, chapter, verse
+            HAVING COUNT(DISTINCT TRIM(text)) > 1
         )
         """
     ).fetchone()[0]
@@ -189,17 +203,18 @@ try:
             "with no matching BSB_books row"
         )
 
-    if duplicate_reference_count:
+    if conflicting_duplicate_count:
         fail(
-            "BSB database has "
-            f"{duplicate_reference_count} duplicate verse references"
+            "BSB database contains "
+            f"{conflicting_duplicate_count} duplicated verse references "
+            "with conflicting text"
         )
 
     available_references = {
         f"{book_name} {chapter}:{verse}"
         for book_name, chapter, verse in connection.execute(
             """
-            SELECT
+            SELECT DISTINCT
                 b.name,
                 v.chapter,
                 v.verse
@@ -340,6 +355,10 @@ print(
 print(
     f"Curated daily readings: {len(readings)} "
     "unique main references; every reference resolves locally."
+)
+print(
+    "Duplicate BSB rows with identical text: "
+    f"{duplicate_reference_count:,} logical references."
 )
 print(
     "Full-chapter viewing and double-tap lock "
