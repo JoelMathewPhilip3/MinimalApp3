@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "translation": "KJV",
-  "description": "Strict daily-main allowlist selected for concise, encouraging, understandable morning viewing. Verse text is loaded from the bundled KJV database.",
+  "translation": "BSB",
+  "description": "Strict daily-main allowlist selected for concise, encouraging, understandable morning viewing. Verse text is loaded from the bundled Berean Standard Bible database.",
   "selectionPolicy": {
     "mainVerse": "approved allowlist only",
     "maxWords": 34,
