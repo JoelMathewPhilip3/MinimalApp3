@@ -21,8 +21,8 @@ data class BibleChapter(
 }
 
 object BibleRepository {
-    private const val ASSET_NAME = "kjv.sqlite"
-    private const val DATABASE_NAME = "kjv.sqlite"
+    private const val ASSET_NAME = "bsb.sqlite"
+    private const val DATABASE_NAME = "bsb.sqlite"
 
     @Volatile private var database: SQLiteDatabase? = null
 
