@@ -1,0 +1,5753 @@
+{
+  "schemaVersion": 3,
+  "translation": "KJV",
+  "description": "Strict daily-main allowlist selected for concise, encouraging, understandable morning viewing. Verse text is loaded from the bundled KJV database.",
+  "selectionPolicy": {
+    "mainVerse": "approved allowlist only",
+    "maxWords": 34,
+    "bookBalance": true,
+    "avoidRecentRepeats": true
+  },
+  "readings": [
+    {
+      "main": "Psalms 40:16",
+      "themes": [
+        "hope",
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 40:17",
+        "Psalms 40:13",
+        "Psalms 40:12"
+      ]
+    },
+    {
+      "main": "Psalms 70:4",
+      "themes": [
+        "hope",
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 70:5",
+        "Psalms 70:1",
+        "Psalms 70:3"
+      ]
+    },
+    {
+      "main": "Psalms 106:1",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 106:2",
+        "Psalms 106:4",
+        "Psalms 106:5"
+      ]
+    },
+    {
+      "main": "Psalms 28:7",
+      "themes": [
+        "courage",
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "Psalms 28:6",
+        "Psalms 28:8",
+        "Psalms 28:9"
+      ]
+    },
+    {
+      "main": "Psalms 21:1",
+      "themes": [
+        "courage",
+        "hope",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 21:2",
+        "Psalms 21:3",
+        "Psalms 21:4"
+      ]
+    },
+    {
+      "main": "Psalms 39:12",
+      "themes": [
+        "peace",
+        "prayer",
+        "presence"
+      ],
+      "related": [
+        "Psalms 39:13",
+        "Psalms 39:10",
+        "Psalms 39:9"
+      ]
+    },
+    {
+      "main": "Psalms 40:10",
+      "themes": [
+        "trust",
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 40:9",
+        "Psalms 40:11",
+        "Psalms 40:8"
+      ]
+    },
+    {
+      "main": "Psalms 107:1",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 107:3",
+        "Psalms 107:4",
+        "Psalms 107:5"
+      ]
+    },
+    {
+      "main": "Psalms 111:10",
+      "themes": [
+        "discipline",
+        "wisdom",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 111:9",
+        "Psalms 111:8",
+        "Psalms 111:6"
+      ]
+    },
+    {
+      "main": "Psalms 118:1",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 118:2",
+        "Psalms 118:3",
+        "Psalms 118:4"
+      ]
+    },
+    {
+      "main": "Psalms 118:29",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 118:28",
+        "Psalms 118:27",
+        "Psalms 118:26"
+      ]
+    },
+    {
+      "main": "Psalms 136:1",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 136:2",
+        "Psalms 136:3",
+        "Psalms 136:4"
+      ]
+    },
+    {
+      "main": "Psalms 136:2",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 136:1",
+        "Psalms 136:3",
+        "Psalms 136:4"
+      ]
+    },
+    {
+      "main": "Psalms 136:3",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 136:2",
+        "Psalms 136:4",
+        "Psalms 136:1"
+      ]
+    },
+    {
+      "main": "Psalms 136:26",
+      "themes": [
+        "love",
+        "discipline",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 136:25",
+        "Psalms 136:23",
+        "Psalms 136:22"
+      ]
+    },
+    {
+      "main": "Psalms 143:1",
+      "themes": [
+        "trust",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 143:4",
+        "Psalms 143:5",
+        "Psalms 143:6"
+      ]
+    },
+    {
+      "main": "Psalms 18:2",
+      "themes": [
+        "courage",
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 18:1",
+        "Psalms 18:4",
+        "Psalms 18:6"
+      ]
+    },
+    {
+      "main": "Psalms 22:26",
+      "themes": [
+        "prayer",
+        "gratitude",
+        "humility"
+      ],
+      "related": [
+        "Psalms 22:25",
+        "Psalms 22:27",
+        "Psalms 22:24"
+      ]
+    },
+    {
+      "main": "Psalms 30:12",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 30:11",
+        "Psalms 30:10",
+        "Psalms 30:8"
+      ]
+    },
+    {
+      "main": "Psalms 31:24",
+      "themes": [
+        "courage",
+        "hope"
+      ],
+      "related": [
+        "Psalms 31:22",
+        "Psalms 31:21",
+        "Psalms 31:20"
+      ]
+    },
+    {
+      "main": "Psalms 32:11",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Psalms 32:10",
+        "Psalms 32:9",
+        "Psalms 32:8"
+      ]
+    },
+    {
+      "main": "Psalms 42:8",
+      "themes": [
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 42:7",
+        "Psalms 42:6",
+        "Psalms 42:5"
+      ]
+    },
+    {
+      "main": "Psalms 69:32",
+      "themes": [
+        "hope",
+        "prayer",
+        "humility"
+      ],
+      "related": [
+        "Psalms 69:31",
+        "Psalms 69:33",
+        "Psalms 69:30"
+      ]
+    },
+    {
+      "main": "Psalms 106:47",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 106:46",
+        "Psalms 106:48",
+        "Psalms 106:45"
+      ]
+    },
+    {
+      "main": "Psalms 4:1",
+      "themes": [
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 4:2",
+        "Psalms 4:3",
+        "Psalms 4:4"
+      ]
+    },
+    {
+      "main": "Proverbs 1:7",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 1:6",
+        "Proverbs 1:8",
+        "Proverbs 1:5"
+      ]
+    },
+    {
+      "main": "Psalms 14:7",
+      "themes": [
+        "hope",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 14:6",
+        "Psalms 14:5",
+        "Psalms 14:4"
+      ]
+    },
+    {
+      "main": "Proverbs 9:10",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 9:9",
+        "Proverbs 9:11",
+        "Proverbs 9:12"
+      ]
+    },
+    {
+      "main": "Psalms 31:7",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Psalms 31:6",
+        "Psalms 31:5",
+        "Psalms 31:9"
+      ]
+    },
+    {
+      "main": "Proverbs 14:33",
+      "themes": [
+        "peace",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 14:32",
+        "Proverbs 14:34",
+        "Proverbs 14:31"
+      ]
+    },
+    {
+      "main": "Psalms 36:5",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Psalms 36:4",
+        "Psalms 36:3",
+        "Psalms 36:7"
+      ]
+    },
+    {
+      "main": "Proverbs 15:14",
+      "themes": [
+        "wisdom",
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 15:13",
+        "Proverbs 15:15",
+        "Proverbs 15:12"
+      ]
+    },
+    {
+      "main": "Psalms 51:12",
+      "themes": [
+        "peace",
+        "hope",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 51:11",
+        "Psalms 51:13",
+        "Psalms 51:10"
+      ]
+    },
+    {
+      "main": "Proverbs 1:2",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 1:1",
+        "Proverbs 1:4",
+        "Proverbs 1:5"
+      ]
+    },
+    {
+      "main": "Psalms 53:6",
+      "themes": [
+        "hope",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 53:5",
+        "Psalms 53:4",
+        "Psalms 53:3"
+      ]
+    },
+    {
+      "main": "Proverbs 8:14",
+      "themes": [
+        "courage",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 8:15",
+        "Proverbs 8:12",
+        "Proverbs 8:16"
+      ]
+    },
+    {
+      "main": "Psalms 66:20",
+      "themes": [
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 66:19",
+        "Psalms 66:18",
+        "Psalms 66:17"
+      ]
+    },
+    {
+      "main": "Proverbs 12:1",
+      "themes": [
+        "love",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 12:3",
+        "Proverbs 12:4",
+        "Proverbs 12:5"
+      ]
+    },
+    {
+      "main": "Psalms 69:30",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 69:29",
+        "Psalms 69:31",
+        "Psalms 69:28"
+      ]
+    },
+    {
+      "main": "Proverbs 14:6",
+      "themes": [
+        "wisdom",
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 14:5",
+        "Proverbs 14:7",
+        "Proverbs 14:4"
+      ]
+    },
+    {
+      "main": "Psalms 75:1",
+      "themes": [
+        "gratitude",
+        "presence"
+      ],
+      "related": [
+        "Psalms 75:2",
+        "Psalms 75:3",
+        "Psalms 75:4"
+      ]
+    },
+    {
+      "main": "Proverbs 15:21",
+      "themes": [
+        "hope",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 15:20",
+        "Proverbs 15:22",
+        "Proverbs 15:19"
+      ]
+    },
+    {
+      "main": "Psalms 97:12",
+      "themes": [
+        "hope",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 97:11",
+        "Psalms 97:10",
+        "Psalms 97:9"
+      ]
+    },
+    {
+      "main": "Proverbs 23:23",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 23:24",
+        "Proverbs 23:21",
+        "Proverbs 23:25"
+      ]
+    },
+    {
+      "main": "Psalms 98:4",
+      "themes": [
+        "hope",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 98:5",
+        "Psalms 98:2",
+        "Psalms 98:6"
+      ]
+    },
+    {
+      "main": "Proverbs 24:5",
+      "themes": [
+        "courage",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 24:4",
+        "Proverbs 24:3",
+        "Proverbs 24:7"
+      ]
+    },
+    {
+      "main": "Psalms 9:2",
+      "themes": [
+        "hope",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 9:1",
+        "Psalms 9:4",
+        "Psalms 9:9"
+      ]
+    },
+    {
+      "main": "John 14:27",
+      "themes": [
+        "peace",
+        "presence"
+      ],
+      "related": [
+        "John 14:26",
+        "John 14:28",
+        "John 14:25"
+      ]
+    },
+    {
+      "main": "Psalms 51:8",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Psalms 51:7",
+        "Psalms 51:9",
+        "Psalms 51:10"
+      ]
+    },
+    {
+      "main": "Proverbs 25:19",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Proverbs 25:20",
+        "Proverbs 25:17",
+        "Proverbs 25:16"
+      ]
+    },
+    {
+      "main": "Psalms 65:2",
+      "themes": [
+        "peace",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 65:1",
+        "Psalms 65:3",
+        "Psalms 65:4"
+      ]
+    },
+    {
+      "main": "John 8:56",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "John 8:55",
+        "John 8:57",
+        "John 8:54"
+      ]
+    },
+    {
+      "main": "Psalms 89:33",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Psalms 89:32",
+        "Psalms 89:34",
+        "Psalms 89:31"
+      ]
+    },
+    {
+      "main": "Proverbs 2:10",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 2:11",
+        "Proverbs 2:7",
+        "Proverbs 2:13"
+      ]
+    },
+    {
+      "main": "Psalms 90:14",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Psalms 90:13",
+        "Psalms 90:15",
+        "Psalms 90:12"
+      ]
+    },
+    {
+      "main": "John 11:27",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 11:26",
+        "John 11:28",
+        "John 11:25"
+      ]
+    },
+    {
+      "main": "Psalms 92:2",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Psalms 92:1",
+        "Psalms 92:3",
+        "Psalms 92:4"
+      ]
+    },
+    {
+      "main": "Proverbs 3:5",
+      "themes": [
+        "trust",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 3:4",
+        "Proverbs 3:6",
+        "Proverbs 3:3"
+      ]
+    },
+    {
+      "main": "Psalms 95:2",
+      "themes": [
+        "hope",
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 95:1",
+        "Psalms 95:3",
+        "Psalms 95:4"
+      ]
+    },
+    {
+      "main": "John 12:46",
+      "themes": [
+        "trust",
+        "presence"
+      ],
+      "related": [
+        "John 12:45",
+        "John 12:47",
+        "John 12:44"
+      ]
+    },
+    {
+      "main": "Psalms 100:4",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 100:3",
+        "Psalms 100:5",
+        "Psalms 100:2"
+      ]
+    },
+    {
+      "main": "Proverbs 2:2",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 2:1",
+        "Proverbs 2:3",
+        "Proverbs 2:4"
+      ]
+    },
+    {
+      "main": "Psalms 101:6",
+      "themes": [
+        "trust",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 101:5",
+        "Psalms 101:7",
+        "Psalms 101:3"
+      ]
+    },
+    {
+      "main": "John 13:33",
+      "themes": [
+        "prayer",
+        "presence"
+      ],
+      "related": [
+        "John 13:32",
+        "John 13:34",
+        "John 13:31"
+      ]
+    },
+    {
+      "main": "Psalms 119:76",
+      "themes": [
+        "peace",
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 119:77",
+        "Psalms 119:74",
+        "Psalms 119:78"
+      ]
+    },
+    {
+      "main": "Proverbs 3:19",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 3:18",
+        "Proverbs 3:20",
+        "Proverbs 3:17"
+      ]
+    },
+    {
+      "main": "Psalms 119:90",
+      "themes": [
+        "trust",
+        "presence"
+      ],
+      "related": [
+        "Psalms 119:89",
+        "Psalms 119:91",
+        "Psalms 119:88"
+      ]
+    },
+    {
+      "main": "John 16:20",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "John 16:19",
+        "John 16:21",
+        "John 16:18"
+      ]
+    },
+    {
+      "main": "Psalms 122:6",
+      "themes": [
+        "peace",
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 122:7",
+        "Psalms 122:4",
+        "Psalms 122:8"
+      ]
+    },
+    {
+      "main": "Proverbs 8:5",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 8:4",
+        "Proverbs 8:6",
+        "Proverbs 8:3"
+      ]
+    },
+    {
+      "main": "Psalms 136:5",
+      "themes": [
+        "love",
+        "discipline",
+        "wisdom"
+      ],
+      "related": [
+        "Psalms 136:4",
+        "Psalms 136:6",
+        "Psalms 136:3"
+      ]
+    },
+    {
+      "main": "John 16:24",
+      "themes": [
+        "hope",
+        "prayer"
+      ],
+      "related": [
+        "John 16:23",
+        "John 16:25",
+        "John 16:22"
+      ]
+    },
+    {
+      "main": "Psalms 136:12",
+      "themes": [
+        "courage",
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "Psalms 136:11",
+        "Psalms 136:13",
+        "Psalms 136:10"
+      ]
+    },
+    {
+      "main": "Proverbs 11:13",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Proverbs 11:12",
+        "Proverbs 11:14",
+        "Proverbs 11:11"
+      ]
+    },
+    {
+      "main": "Psalms 12:1",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Psalms 12:2",
+        "Psalms 12:3",
+        "Psalms 12:4"
+      ]
+    },
+    {
+      "main": "John 6:29",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 6:28",
+        "John 6:30",
+        "John 6:31"
+      ]
+    },
+    {
+      "main": "Psalms 19:14",
+      "themes": [
+        "courage",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 19:13",
+        "Psalms 19:12",
+        "Psalms 19:10"
+      ]
+    },
+    {
+      "main": "Proverbs 12:20",
+      "themes": [
+        "peace",
+        "hope"
+      ],
+      "related": [
+        "Proverbs 12:19",
+        "Proverbs 12:22",
+        "Proverbs 12:17"
+      ]
+    },
+    {
+      "main": "Psalms 20:5",
+      "themes": [
+        "hope",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 20:4",
+        "Psalms 20:6",
+        "Psalms 20:7"
+      ]
+    },
+    {
+      "main": "John 7:39",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 7:38",
+        "John 7:40",
+        "John 7:37"
+      ]
+    },
+    {
+      "main": "Psalms 27:14",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Psalms 27:13",
+        "Psalms 27:10",
+        "Psalms 27:9"
+      ]
+    },
+    {
+      "main": "John 8:42",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "John 8:43",
+        "John 8:39",
+        "John 8:45"
+      ]
+    },
+    {
+      "main": "Psalms 34:2",
+      "themes": [
+        "hope",
+        "humility"
+      ],
+      "related": [
+        "Psalms 34:1",
+        "Psalms 34:3",
+        "Psalms 34:4"
+      ]
+    },
+    {
+      "main": "Proverbs 14:26",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Proverbs 14:25",
+        "Proverbs 14:27",
+        "Proverbs 14:24"
+      ]
+    },
+    {
+      "main": "Psalms 34:22",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 34:20",
+        "Psalms 34:19",
+        "Psalms 34:18"
+      ]
+    },
+    {
+      "main": "Proverbs 15:29",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 15:28",
+        "Proverbs 15:30",
+        "Proverbs 15:27"
+      ]
+    },
+    {
+      "main": "Psalms 64:10",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "Psalms 64:9",
+        "Psalms 64:8",
+        "Psalms 64:7"
+      ]
+    },
+    {
+      "main": "John 14:1",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 14:2",
+        "John 14:3",
+        "John 14:4"
+      ]
+    },
+    {
+      "main": "Psalms 84:8",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 84:7",
+        "Psalms 84:9",
+        "Psalms 84:6"
+      ]
+    },
+    {
+      "main": "Proverbs 15:33",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 15:32",
+        "Proverbs 15:31",
+        "Proverbs 15:30"
+      ]
+    },
+    {
+      "main": "John 2:22",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 2:21",
+        "John 2:23",
+        "John 2:20"
+      ]
+    },
+    {
+      "main": "Proverbs 16:19",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "Proverbs 16:20",
+        "Proverbs 16:17",
+        "Proverbs 16:21"
+      ]
+    },
+    {
+      "main": "Psalms 86:2",
+      "themes": [
+        "trust",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 86:1",
+        "Psalms 86:3",
+        "Psalms 86:4"
+      ]
+    },
+    {
+      "main": "John 3:8",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "John 3:7",
+        "John 3:9",
+        "John 3:6"
+      ]
+    },
+    {
+      "main": "Psalms 97:10",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 97:9",
+        "Psalms 97:11",
+        "Psalms 97:12"
+      ]
+    },
+    {
+      "main": "Proverbs 18:15",
+      "themes": [
+        "wisdom",
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 18:14",
+        "Proverbs 18:16",
+        "Proverbs 18:13"
+      ]
+    },
+    {
+      "main": "John 4:21",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 4:20",
+        "John 4:22",
+        "John 4:19"
+      ]
+    },
+    {
+      "main": "Psalms 105:3",
+      "themes": [
+        "hope",
+        "prayer"
+      ],
+      "related": [
+        "Psalms 105:2",
+        "Psalms 105:4",
+        "Psalms 105:1"
+      ]
+    },
+    {
+      "main": "Proverbs 19:8",
+      "themes": [
+        "love",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 19:7",
+        "Proverbs 19:6",
+        "Proverbs 19:10"
+      ]
+    },
+    {
+      "main": "John 4:50",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 4:49",
+        "John 4:51",
+        "John 4:48"
+      ]
+    },
+    {
+      "main": "Psalms 116:7",
+      "themes": [
+        "peace",
+        "presence"
+      ],
+      "related": [
+        "Psalms 116:6",
+        "Psalms 116:8",
+        "Psalms 116:5"
+      ]
+    },
+    {
+      "main": "Proverbs 21:30",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 21:29",
+        "Proverbs 21:31",
+        "Proverbs 21:26"
+      ]
+    },
+    {
+      "main": "John 4:53",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 4:52",
+        "John 4:54",
+        "John 4:51"
+      ]
+    },
+    {
+      "main": "1 Corinthians 1:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Corinthians 1:8",
+        "1 Corinthians 1:7",
+        "1 Corinthians 1:11"
+      ]
+    },
+    {
+      "main": "Psalms 140:7",
+      "themes": [
+        "courage",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 140:6",
+        "Psalms 140:8",
+        "Psalms 140:5"
+      ]
+    },
+    {
+      "main": "Proverbs 22:12",
+      "themes": [
+        "wisdom",
+        "purpose"
+      ],
+      "related": [
+        "Proverbs 22:11",
+        "Proverbs 22:13",
+        "Proverbs 22:10"
+      ]
+    },
+    {
+      "main": "John 6:23",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "John 6:22",
+        "John 6:24",
+        "John 6:21"
+      ]
+    },
+    {
+      "main": "1 Corinthians 1:4",
+      "themes": [
+        "gratitude",
+        "forgiveness"
+      ],
+      "related": [
+        "1 Corinthians 1:5",
+        "1 Corinthians 1:6",
+        "1 Corinthians 1:7"
+      ]
+    },
+    {
+      "main": "Psalms 2:11",
+      "themes": [
+        "hope",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 2:10",
+        "Psalms 2:8",
+        "Psalms 2:7"
+      ]
+    },
+    {
+      "main": "Proverbs 23:12",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 23:11",
+        "Proverbs 23:13",
+        "Proverbs 23:10"
+      ]
+    },
+    {
+      "main": "John 6:24",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 6:23",
+        "John 6:25",
+        "John 6:22"
+      ]
+    },
+    {
+      "main": "Hebrews 4:16",
+      "themes": [
+        "courage",
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Hebrews 4:15",
+        "Hebrews 4:14",
+        "Hebrews 4:13"
+      ]
+    },
+    {
+      "main": "1 Corinthians 13:7",
+      "themes": [
+        "trust",
+        "hope",
+        "discipline"
+      ],
+      "related": [
+        "1 Corinthians 13:6",
+        "1 Corinthians 13:8",
+        "1 Corinthians 13:5"
+      ]
+    },
+    {
+      "main": "Psalms 4:4",
+      "themes": [
+        "peace",
+        "presence"
+      ],
+      "related": [
+        "Psalms 4:3",
+        "Psalms 4:5",
+        "Psalms 4:2"
+      ]
+    },
+    {
+      "main": "Proverbs 25:13",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Proverbs 25:12",
+        "Proverbs 25:14",
+        "Proverbs 25:11"
+      ]
+    },
+    {
+      "main": "John 6:26",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 6:25",
+        "John 6:24",
+        "John 6:28"
+      ]
+    },
+    {
+      "main": "Hebrews 11:11",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:10",
+        "Hebrews 11:12",
+        "Hebrews 11:9"
+      ]
+    },
+    {
+      "main": "1 Corinthians 16:23",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "1 Corinthians 16:22",
+        "1 Corinthians 16:24",
+        "1 Corinthians 16:20"
+      ]
+    },
+    {
+      "main": "Psalms 5:3",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 5:2",
+        "Psalms 5:4",
+        "Psalms 5:1"
+      ]
+    },
+    {
+      "main": "Proverbs 2:3",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 2:2",
+        "Proverbs 2:4",
+        "Proverbs 2:1"
+      ]
+    },
+    {
+      "main": "John 10:25",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 10:24",
+        "John 10:26",
+        "John 10:23"
+      ]
+    },
+    {
+      "main": "Hebrews 1:9",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Hebrews 1:8",
+        "Hebrews 1:10",
+        "Hebrews 1:7"
+      ]
+    },
+    {
+      "main": "1 Corinthians 16:24",
+      "themes": [
+        "love",
+        "presence"
+      ],
+      "related": [
+        "1 Corinthians 16:23",
+        "1 Corinthians 16:22",
+        "1 Corinthians 16:20"
+      ]
+    },
+    {
+      "main": "Psalms 6:9",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 6:8",
+        "Psalms 6:6",
+        "Psalms 6:5"
+      ]
+    },
+    {
+      "main": "Proverbs 3:13",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 3:12",
+        "Proverbs 3:14",
+        "Proverbs 3:15"
+      ]
+    },
+    {
+      "main": "John 11:13",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "John 11:12",
+        "John 11:14",
+        "John 11:11"
+      ]
+    },
+    {
+      "main": "Hebrews 10:22",
+      "themes": [
+        "trust",
+        "presence"
+      ],
+      "related": [
+        "Hebrews 10:21",
+        "Hebrews 10:23",
+        "Hebrews 10:20"
+      ]
+    },
+    {
+      "main": "Ephesians 6:23",
+      "themes": [
+        "peace",
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Ephesians 6:22",
+        "Ephesians 6:24",
+        "Ephesians 6:21"
+      ]
+    },
+    {
+      "main": "2 Corinthians 8:7",
+      "themes": [
+        "trust",
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "2 Corinthians 8:6",
+        "2 Corinthians 8:5",
+        "2 Corinthians 8:9"
+      ]
+    },
+    {
+      "main": "1 Corinthians 7:20",
+      "themes": [
+        "presence",
+        "purpose"
+      ],
+      "related": [
+        "1 Corinthians 7:21",
+        "1 Corinthians 7:22",
+        "1 Corinthians 7:17"
+      ]
+    },
+    {
+      "main": "Psalms 16:1",
+      "themes": [
+        "trust",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 16:2",
+        "Psalms 16:3",
+        "Psalms 16:5"
+      ]
+    },
+    {
+      "main": "Proverbs 3:34",
+      "themes": [
+        "forgiveness",
+        "humility"
+      ],
+      "related": [
+        "Proverbs 3:35",
+        "Proverbs 3:31",
+        "Proverbs 3:30"
+      ]
+    },
+    {
+      "main": "John 11:54",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "John 11:53",
+        "John 11:55",
+        "John 11:52"
+      ]
+    },
+    {
+      "main": "Hebrews 12:15",
+      "themes": [
+        "discipline",
+        "forgiveness"
+      ],
+      "related": [
+        "Hebrews 12:14",
+        "Hebrews 12:16",
+        "Hebrews 12:13"
+      ]
+    },
+    {
+      "main": "Ephesians 1:16",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Ephesians 1:15",
+        "Ephesians 1:17",
+        "Ephesians 1:14"
+      ]
+    },
+    {
+      "main": "2 Corinthians 13:11",
+      "themes": [
+        "peace",
+        "love",
+        "presence"
+      ],
+      "related": [
+        "2 Corinthians 13:12",
+        "2 Corinthians 13:9",
+        "2 Corinthians 13:13"
+      ]
+    },
+    {
+      "main": "1 Corinthians 13:8",
+      "themes": [
+        "love",
+        "wisdom"
+      ],
+      "related": [
+        "1 Corinthians 13:7",
+        "1 Corinthians 13:9",
+        "1 Corinthians 13:6"
+      ]
+    },
+    {
+      "main": "Romans 1:7",
+      "themes": [
+        "peace",
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Romans 1:6",
+        "Romans 1:8",
+        "Romans 1:5"
+      ]
+    },
+    {
+      "main": "Psalms 17:1",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 17:2",
+        "Psalms 17:3",
+        "Psalms 17:5"
+      ]
+    },
+    {
+      "main": "Proverbs 4:1",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 4:2",
+        "Proverbs 4:3",
+        "Proverbs 4:4"
+      ]
+    },
+    {
+      "main": "John 12:36",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 12:35",
+        "John 12:37",
+        "John 12:34"
+      ]
+    },
+    {
+      "main": "Hebrews 6:9",
+      "themes": [
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Hebrews 6:8",
+        "Hebrews 6:7",
+        "Hebrews 6:11"
+      ]
+    },
+    {
+      "main": "Ephesians 1:13",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 1:12",
+        "Ephesians 1:14",
+        "Ephesians 1:11"
+      ]
+    },
+    {
+      "main": "2 Corinthians 13:14",
+      "themes": [
+        "love",
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "2 Corinthians 13:13",
+        "2 Corinthians 13:12",
+        "2 Corinthians 13:11"
+      ]
+    },
+    {
+      "main": "1 Corinthians 14:19",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "1 Corinthians 14:18",
+        "1 Corinthians 14:20",
+        "1 Corinthians 14:17"
+      ]
+    },
+    {
+      "main": "Romans 7:25",
+      "themes": [
+        "gratitude",
+        "purpose"
+      ],
+      "related": [
+        "Romans 7:24",
+        "Romans 7:21",
+        "Romans 7:20"
+      ]
+    },
+    {
+      "main": "Psalms 18:1",
+      "themes": [
+        "courage",
+        "love"
+      ],
+      "related": [
+        "Psalms 18:2",
+        "Psalms 18:4",
+        "Psalms 18:6"
+      ]
+    },
+    {
+      "main": "Proverbs 4:5",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 4:4",
+        "Proverbs 4:6",
+        "Proverbs 4:3"
+      ]
+    },
+    {
+      "main": "John 12:44",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 12:43",
+        "John 12:45",
+        "John 12:42"
+      ]
+    },
+    {
+      "main": "Ephesians 6:18",
+      "themes": [
+        "discipline",
+        "prayer"
+      ],
+      "related": [
+        "Ephesians 6:19",
+        "Ephesians 6:16",
+        "Ephesians 6:20"
+      ]
+    },
+    {
+      "main": "Hebrews 10:23",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 10:22",
+        "Hebrews 10:24",
+        "Hebrews 10:21"
+      ]
+    },
+    {
+      "main": "2 Corinthians 1:11",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "2 Corinthians 1:10",
+        "2 Corinthians 1:9",
+        "2 Corinthians 1:13"
+      ]
+    },
+    {
+      "main": "1 Corinthians 16:13",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "1 Corinthians 16:14",
+        "1 Corinthians 16:11",
+        "1 Corinthians 16:15"
+      ]
+    },
+    {
+      "main": "Romans 1:8",
+      "themes": [
+        "trust",
+        "gratitude"
+      ],
+      "related": [
+        "Romans 1:7",
+        "Romans 1:9",
+        "Romans 1:6"
+      ]
+    },
+    {
+      "main": "Psalms 21:13",
+      "themes": [
+        "courage",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 21:12",
+        "Psalms 21:11",
+        "Psalms 21:7"
+      ]
+    },
+    {
+      "main": "Proverbs 4:6",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "Proverbs 4:5",
+        "Proverbs 4:7",
+        "Proverbs 4:4"
+      ]
+    },
+    {
+      "main": "John 14:17",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "John 14:16",
+        "John 14:18",
+        "John 14:15"
+      ]
+    },
+    {
+      "main": "Hebrews 11:23",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:22",
+        "Hebrews 11:24",
+        "Hebrews 11:21"
+      ]
+    },
+    {
+      "main": "Ephesians 1:6",
+      "themes": [
+        "love",
+        "gratitude",
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 1:5",
+        "Ephesians 1:4",
+        "Ephesians 1:3"
+      ]
+    },
+    {
+      "main": "1 Corinthians 1:14",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "1 Corinthians 1:13",
+        "1 Corinthians 1:15",
+        "1 Corinthians 1:12"
+      ]
+    },
+    {
+      "main": "2 Corinthians 6:6",
+      "themes": [
+        "love",
+        "wisdom"
+      ],
+      "related": [
+        "2 Corinthians 6:5",
+        "2 Corinthians 6:7",
+        "2 Corinthians 6:4"
+      ]
+    },
+    {
+      "main": "Romans 12:12",
+      "themes": [
+        "hope",
+        "prayer"
+      ],
+      "related": [
+        "Romans 12:11",
+        "Romans 12:13",
+        "Romans 12:10"
+      ]
+    },
+    {
+      "main": "Psalms 25:5",
+      "themes": [
+        "wisdom",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 25:4",
+        "Psalms 25:6",
+        "Psalms 25:3"
+      ]
+    },
+    {
+      "main": "John 14:23",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "John 14:22",
+        "John 14:24",
+        "John 14:21"
+      ]
+    },
+    {
+      "main": "Proverbs 4:7",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 4:6",
+        "Proverbs 4:8",
+        "Proverbs 4:5"
+      ]
+    },
+    {
+      "main": "Hebrews 13:18",
+      "themes": [
+        "trust",
+        "prayer"
+      ],
+      "related": [
+        "Hebrews 13:17",
+        "Hebrews 13:19",
+        "Hebrews 13:16"
+      ]
+    },
+    {
+      "main": "Ephesians 1:18",
+      "themes": [
+        "hope",
+        "wisdom",
+        "purpose"
+      ],
+      "related": [
+        "Ephesians 1:17",
+        "Ephesians 1:16",
+        "Ephesians 1:20"
+      ]
+    },
+    {
+      "main": "2 Corinthians 9:7",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "2 Corinthians 9:6",
+        "2 Corinthians 9:5",
+        "2 Corinthians 9:9"
+      ]
+    },
+    {
+      "main": "1 Corinthians 3:10",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "1 Corinthians 3:9",
+        "1 Corinthians 3:11",
+        "1 Corinthians 3:12"
+      ]
+    },
+    {
+      "main": "Romans 16:24",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "Romans 16:23",
+        "Romans 16:25",
+        "Romans 16:22"
+      ]
+    },
+    {
+      "main": "Psalms 29:11",
+      "themes": [
+        "peace",
+        "courage"
+      ],
+      "related": [
+        "Psalms 29:10",
+        "Psalms 29:9",
+        "Psalms 29:8"
+      ]
+    },
+    {
+      "main": "Proverbs 8:10",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 8:9",
+        "Proverbs 8:11",
+        "Proverbs 8:12"
+      ]
+    },
+    {
+      "main": "John 18:19",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 18:20",
+        "John 18:17",
+        "John 18:21"
+      ]
+    },
+    {
+      "main": "Hebrews 4:9",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Hebrews 4:10",
+        "Hebrews 4:7",
+        "Hebrews 4:11"
+      ]
+    },
+    {
+      "main": "Ephesians 3:12",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Ephesians 3:11",
+        "Ephesians 3:13",
+        "Ephesians 3:10"
+      ]
+    },
+    {
+      "main": "2 Corinthians 4:13",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "2 Corinthians 4:12",
+        "2 Corinthians 4:14",
+        "2 Corinthians 4:11"
+      ]
+    },
+    {
+      "main": "1 Corinthians 4:10",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "1 Corinthians 4:9",
+        "1 Corinthians 4:11",
+        "1 Corinthians 4:8"
+      ]
+    },
+    {
+      "main": "Psalms 30:4",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 30:3",
+        "Psalms 30:5",
+        "Psalms 30:2"
+      ]
+    },
+    {
+      "main": "Romans 15:15",
+      "themes": [
+        "courage",
+        "forgiveness"
+      ],
+      "related": [
+        "Romans 15:14",
+        "Romans 15:13",
+        "Romans 15:17"
+      ]
+    },
+    {
+      "main": "Proverbs 8:12",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 8:11",
+        "Proverbs 8:10",
+        "Proverbs 8:14"
+      ]
+    },
+    {
+      "main": "John 19:26",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "John 19:25",
+        "John 19:27",
+        "John 19:24"
+      ]
+    },
+    {
+      "main": "Hebrews 9:28",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Hebrews 9:24",
+        "Hebrews 9:23",
+        "Hebrews 9:17"
+      ]
+    },
+    {
+      "main": "Ephesians 6:24",
+      "themes": [
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 6:23",
+        "Ephesians 6:22",
+        "Ephesians 6:21"
+      ]
+    },
+    {
+      "main": "2 Corinthians 9:11",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "2 Corinthians 9:10",
+        "2 Corinthians 9:12",
+        "2 Corinthians 9:9"
+      ]
+    },
+    {
+      "main": "1 Corinthians 7:24",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "1 Corinthians 7:23",
+        "1 Corinthians 7:22",
+        "1 Corinthians 7:26"
+      ]
+    },
+    {
+      "main": "Romans 8:39",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 8:38",
+        "Romans 8:37",
+        "Romans 8:33"
+      ]
+    },
+    {
+      "main": "Psalms 31:21",
+      "themes": [
+        "courage",
+        "love"
+      ],
+      "related": [
+        "Psalms 31:20",
+        "Psalms 31:22",
+        "Psalms 31:19"
+      ]
+    },
+    {
+      "main": "Proverbs 8:17",
+      "themes": [
+        "love",
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 8:16",
+        "Proverbs 8:18",
+        "Proverbs 8:15"
+      ]
+    },
+    {
+      "main": "John 20:29",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 20:28",
+        "John 20:30",
+        "John 20:27"
+      ]
+    },
+    {
+      "main": "Ephesians 4:4",
+      "themes": [
+        "hope",
+        "purpose"
+      ],
+      "related": [
+        "Ephesians 4:3",
+        "Ephesians 4:5",
+        "Ephesians 4:2"
+      ]
+    },
+    {
+      "main": "Hebrews 11:4",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:3",
+        "Hebrews 11:5",
+        "Hebrews 11:2"
+      ]
+    },
+    {
+      "main": "2 Timothy 2:22",
+      "themes": [
+        "peace",
+        "trust",
+        "love"
+      ],
+      "related": [
+        "2 Timothy 2:21",
+        "2 Timothy 2:23",
+        "2 Timothy 2:20"
+      ]
+    },
+    {
+      "main": "2 Corinthians 1:24",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "2 Corinthians 1:23",
+        "2 Corinthians 1:22",
+        "2 Corinthians 1:21"
+      ]
+    },
+    {
+      "main": "1 Corinthians 12:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Corinthians 12:8",
+        "1 Corinthians 12:10",
+        "1 Corinthians 12:7"
+      ]
+    },
+    {
+      "main": "Romans 2:20",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Romans 2:19",
+        "Romans 2:21",
+        "Romans 2:18"
+      ]
+    },
+    {
+      "main": "Psalms 32:10",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Psalms 32:9",
+        "Psalms 32:11",
+        "Psalms 32:8"
+      ]
+    },
+    {
+      "main": "Proverbs 9:9",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 9:10",
+        "Proverbs 9:11",
+        "Proverbs 9:6"
+      ]
+    },
+    {
+      "main": "Matthew 11:29",
+      "themes": [
+        "peace",
+        "humility"
+      ],
+      "related": [
+        "Matthew 11:28",
+        "Matthew 11:30",
+        "Matthew 11:27"
+      ]
+    },
+    {
+      "main": "John 1:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 1:6",
+        "John 1:8",
+        "John 1:5"
+      ]
+    },
+    {
+      "main": "Ephesians 5:20",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Ephesians 5:19",
+        "Ephesians 5:21",
+        "Ephesians 5:18"
+      ]
+    },
+    {
+      "main": "Hebrews 11:5",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:4",
+        "Hebrews 11:3",
+        "Hebrews 11:2"
+      ]
+    },
+    {
+      "main": "2 Timothy 4:22",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "2 Timothy 4:21",
+        "2 Timothy 4:20",
+        "2 Timothy 4:19"
+      ]
+    },
+    {
+      "main": "2 Corinthians 2:7",
+      "themes": [
+        "peace",
+        "forgiveness"
+      ],
+      "related": [
+        "2 Corinthians 2:5",
+        "2 Corinthians 2:9",
+        "2 Corinthians 2:4"
+      ]
+    },
+    {
+      "main": "1 Corinthians 14:12",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "1 Corinthians 14:11",
+        "1 Corinthians 14:13",
+        "1 Corinthians 14:10"
+      ]
+    },
+    {
+      "main": "Romans 4:7",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Romans 4:6",
+        "Romans 4:8",
+        "Romans 4:5"
+      ]
+    },
+    {
+      "main": "Psalms 33:1",
+      "themes": [
+        "hope",
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 33:2",
+        "Psalms 33:3",
+        "Psalms 33:4"
+      ]
+    },
+    {
+      "main": "Proverbs 10:13",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 10:12",
+        "Proverbs 10:11",
+        "Proverbs 10:10"
+      ]
+    },
+    {
+      "main": "Matthew 22:37",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Matthew 22:36",
+        "Matthew 22:38",
+        "Matthew 22:35"
+      ]
+    },
+    {
+      "main": "John 3:29",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "John 3:28",
+        "John 3:30",
+        "John 3:27"
+      ]
+    },
+    {
+      "main": "Ephesians 2:5",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 2:4",
+        "Ephesians 2:6",
+        "Ephesians 2:2"
+      ]
+    },
+    {
+      "main": "Hebrews 11:25",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Hebrews 11:24",
+        "Hebrews 11:23",
+        "Hebrews 11:22"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:13",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "2 Timothy 1:12",
+        "2 Timothy 1:14",
+        "2 Timothy 1:11"
+      ]
+    },
+    {
+      "main": "1 Corinthians 15:34",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "1 Corinthians 15:33",
+        "1 Corinthians 15:35",
+        "1 Corinthians 15:36"
+      ]
+    },
+    {
+      "main": "2 Corinthians 7:16",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "2 Corinthians 7:14",
+        "2 Corinthians 7:13",
+        "2 Corinthians 7:12"
+      ]
+    },
+    {
+      "main": "Psalms 33:18",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Psalms 33:17",
+        "Psalms 33:19",
+        "Psalms 33:16"
+      ]
+    },
+    {
+      "main": "Romans 11:31",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Romans 11:30",
+        "Romans 11:32",
+        "Romans 11:29"
+      ]
+    },
+    {
+      "main": "Proverbs 10:23",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 10:22",
+        "Proverbs 10:24",
+        "Proverbs 10:21"
+      ]
+    },
+    {
+      "main": "John 3:35",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "John 3:34",
+        "John 3:33",
+        "John 3:32"
+      ]
+    },
+    {
+      "main": "Matthew 28:20",
+      "themes": [
+        "wisdom",
+        "presence",
+        "purpose"
+      ],
+      "related": [
+        "Matthew 28:19",
+        "Matthew 28:18",
+        "Matthew 28:17"
+      ]
+    },
+    {
+      "main": "Hebrews 13:6",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Hebrews 13:5",
+        "Hebrews 13:7",
+        "Hebrews 13:8"
+      ]
+    },
+    {
+      "main": "Galatians 6:18",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "Galatians 6:17",
+        "Galatians 6:16",
+        "Galatians 6:14"
+      ]
+    },
+    {
+      "main": "Ephesians 3:4",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Ephesians 3:3",
+        "Ephesians 3:5",
+        "Ephesians 3:6"
+      ]
+    },
+    {
+      "main": "Colossians 3:12",
+      "themes": [
+        "love",
+        "humility"
+      ],
+      "related": [
+        "Colossians 3:13",
+        "Colossians 3:10",
+        "Colossians 3:14"
+      ]
+    },
+    {
+      "main": "2 Corinthians 10:15",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "2 Corinthians 10:14",
+        "2 Corinthians 10:16",
+        "2 Corinthians 10:13"
+      ]
+    },
+    {
+      "main": "2 Timothy 3:4",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "2 Timothy 3:3",
+        "2 Timothy 3:5",
+        "2 Timothy 3:2"
+      ]
+    },
+    {
+      "main": "1 Timothy 4:12",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "1 Timothy 4:11",
+        "1 Timothy 4:13",
+        "1 Timothy 4:10"
+      ]
+    },
+    {
+      "main": "1 Peter 5:14",
+      "themes": [
+        "peace",
+        "love",
+        "presence"
+      ],
+      "related": [
+        "1 Peter 5:13",
+        "1 Peter 5:12",
+        "1 Peter 5:11"
+      ]
+    },
+    {
+      "main": "1 John 2:12",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "1 John 2:11",
+        "1 John 2:13",
+        "1 John 2:10"
+      ]
+    },
+    {
+      "main": "1 Corinthians 15:58",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Corinthians 15:57",
+        "1 Corinthians 15:56",
+        "1 Corinthians 15:55"
+      ]
+    },
+    {
+      "main": "Romans 12:6",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "Romans 12:5",
+        "Romans 12:7",
+        "Romans 12:4"
+      ]
+    },
+    {
+      "main": "Psalms 33:22",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Psalms 33:21",
+        "Psalms 33:20",
+        "Psalms 33:19"
+      ]
+    },
+    {
+      "main": "Proverbs 11:2",
+      "themes": [
+        "wisdom",
+        "humility"
+      ],
+      "related": [
+        "Proverbs 11:1",
+        "Proverbs 11:6",
+        "Proverbs 11:8"
+      ]
+    },
+    {
+      "main": "Matthew 2:10",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Matthew 2:9",
+        "Matthew 2:11",
+        "Matthew 2:8"
+      ]
+    },
+    {
+      "main": "John 4:22",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "John 4:21",
+        "John 4:23",
+        "John 4:20"
+      ]
+    },
+    {
+      "main": "Hebrews 13:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 13:6",
+        "Hebrews 13:8",
+        "Hebrews 13:5"
+      ]
+    },
+    {
+      "main": "Ephesians 3:7",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 3:6",
+        "Ephesians 3:8",
+        "Ephesians 3:5"
+      ]
+    },
+    {
+      "main": "Galatians 3:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Galatians 3:8",
+        "Galatians 3:7",
+        "Galatians 3:11"
+      ]
+    },
+    {
+      "main": "Colossians 3:16",
+      "themes": [
+        "wisdom",
+        "forgiveness"
+      ],
+      "related": [
+        "Colossians 3:15",
+        "Colossians 3:17",
+        "Colossians 3:14"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:4",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "2 Timothy 1:3",
+        "2 Timothy 1:5",
+        "2 Timothy 1:6"
+      ]
+    },
+    {
+      "main": "2 Corinthians 1:14",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "2 Corinthians 1:13",
+        "2 Corinthians 1:15",
+        "2 Corinthians 1:11"
+      ]
+    },
+    {
+      "main": "1 Timothy 1:16",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "1 Timothy 1:15",
+        "1 Timothy 1:17",
+        "1 Timothy 1:14"
+      ]
+    },
+    {
+      "main": "1 Peter 5:5",
+      "themes": [
+        "forgiveness",
+        "humility"
+      ],
+      "related": [
+        "1 Peter 5:4",
+        "1 Peter 5:6",
+        "1 Peter 5:3"
+      ]
+    },
+    {
+      "main": "1 John 3:14",
+      "themes": [
+        "love",
+        "presence"
+      ],
+      "related": [
+        "1 John 3:13",
+        "1 John 3:15",
+        "1 John 3:12"
+      ]
+    },
+    {
+      "main": "1 Corinthians 7:8",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "1 Corinthians 7:7",
+        "1 Corinthians 7:9",
+        "1 Corinthians 7:6"
+      ]
+    },
+    {
+      "main": "Romans 2:17",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Romans 2:16",
+        "Romans 2:18",
+        "Romans 2:15"
+      ]
+    },
+    {
+      "main": "Psalms 34:1",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Psalms 34:2",
+        "Psalms 34:3",
+        "Psalms 34:4"
+      ]
+    },
+    {
+      "main": "Proverbs 11:12",
+      "themes": [
+        "peace",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 11:11",
+        "Proverbs 11:13",
+        "Proverbs 11:14"
+      ]
+    },
+    {
+      "main": "Philippians 4:6",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Philippians 4:5",
+        "Philippians 4:7",
+        "Philippians 4:4"
+      ]
+    },
+    {
+      "main": "Hebrews 2:12",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Hebrews 2:11",
+        "Hebrews 2:13",
+        "Hebrews 2:10"
+      ]
+    },
+    {
+      "main": "Matthew 17:21",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Matthew 17:20",
+        "Matthew 17:22",
+        "Matthew 17:19"
+      ]
+    },
+    {
+      "main": "Galatians 5:13",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "Galatians 5:12",
+        "Galatians 5:14",
+        "Galatians 5:15"
+      ]
+    },
+    {
+      "main": "Luke 18:11",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Luke 18:10",
+        "Luke 18:12",
+        "Luke 18:9"
+      ]
+    },
+    {
+      "main": "Ephesians 3:8",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 3:7",
+        "Ephesians 3:9",
+        "Ephesians 3:6"
+      ]
+    },
+    {
+      "main": "John 4:31",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 4:30",
+        "John 4:32",
+        "John 4:29"
+      ]
+    },
+    {
+      "main": "Colossians 1:11",
+      "themes": [
+        "courage",
+        "hope",
+        "discipline"
+      ],
+      "related": [
+        "Colossians 1:10",
+        "Colossians 1:12",
+        "Colossians 1:9"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:18",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "2 Timothy 1:17",
+        "2 Timothy 1:16",
+        "2 Timothy 1:15"
+      ]
+    },
+    {
+      "main": "2 Corinthians 4:14",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "2 Corinthians 4:13",
+        "2 Corinthians 4:15",
+        "2 Corinthians 4:12"
+      ]
+    },
+    {
+      "main": "1 Timothy 6:17",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "1 Timothy 6:16",
+        "1 Timothy 6:18",
+        "1 Timothy 6:15"
+      ]
+    },
+    {
+      "main": "1 John 3:16",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 3:15",
+        "1 John 3:17",
+        "1 John 3:14"
+      ]
+    },
+    {
+      "main": "1 Peter 5:12",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "1 Peter 5:11",
+        "1 Peter 5:13",
+        "1 Peter 5:10"
+      ]
+    },
+    {
+      "main": "1 Corinthians 10:14",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Corinthians 10:13",
+        "1 Corinthians 10:15",
+        "1 Corinthians 10:12"
+      ]
+    },
+    {
+      "main": "Romans 3:11",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Romans 3:10",
+        "Romans 3:12",
+        "Romans 3:9"
+      ]
+    },
+    {
+      "main": "Psalms 35:27",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Psalms 35:26",
+        "Psalms 35:28",
+        "Psalms 35:25"
+      ]
+    },
+    {
+      "main": "Proverbs 13:17",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Proverbs 13:16",
+        "Proverbs 13:18",
+        "Proverbs 13:15"
+      ]
+    },
+    {
+      "main": "Matthew 11:25",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Matthew 11:26",
+        "Matthew 11:27",
+        "Matthew 11:28"
+      ]
+    },
+    {
+      "main": "Philippians 2:17",
+      "themes": [
+        "trust",
+        "hope",
+        "presence"
+      ],
+      "related": [
+        "Philippians 2:16",
+        "Philippians 2:18",
+        "Philippians 2:19"
+      ]
+    },
+    {
+      "main": "Luke 1:77",
+      "themes": [
+        "wisdom",
+        "forgiveness"
+      ],
+      "related": [
+        "Luke 1:76",
+        "Luke 1:78",
+        "Luke 1:75"
+      ]
+    },
+    {
+      "main": "John 5:45",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 5:44",
+        "John 5:46",
+        "John 5:43"
+      ]
+    },
+    {
+      "main": "Hebrews 4:11",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Hebrews 4:10",
+        "Hebrews 4:9",
+        "Hebrews 4:13"
+      ]
+    },
+    {
+      "main": "Galatians 5:23",
+      "themes": [
+        "discipline",
+        "humility"
+      ],
+      "related": [
+        "Galatians 5:22",
+        "Galatians 5:24",
+        "Galatians 5:25"
+      ]
+    },
+    {
+      "main": "Ephesians 3:10",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Ephesians 3:9",
+        "Ephesians 3:11",
+        "Ephesians 3:8"
+      ]
+    },
+    {
+      "main": "Colossians 2:7",
+      "themes": [
+        "trust",
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Colossians 2:6",
+        "Colossians 2:5",
+        "Colossians 2:9"
+      ]
+    },
+    {
+      "main": "2 Timothy 2:7",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "2 Timothy 2:6",
+        "2 Timothy 2:8",
+        "2 Timothy 2:5"
+      ]
+    },
+    {
+      "main": "2 Corinthians 5:11",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "2 Corinthians 5:12",
+        "2 Corinthians 5:9",
+        "2 Corinthians 5:13"
+      ]
+    },
+    {
+      "main": "1 John 4:7",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:6",
+        "1 John 4:8",
+        "1 John 4:5"
+      ]
+    },
+    {
+      "main": "1 Timothy 2:7",
+      "themes": [
+        "trust",
+        "wisdom"
+      ],
+      "related": [
+        "1 Timothy 2:6",
+        "1 Timothy 2:5",
+        "1 Timothy 2:9"
+      ]
+    },
+    {
+      "main": "1 Corinthians 10:24",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "1 Corinthians 10:23",
+        "1 Corinthians 10:25",
+        "1 Corinthians 10:22"
+      ]
+    },
+    {
+      "main": "1 Peter 1:9",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "1 Peter 1:8",
+        "1 Peter 1:10",
+        "1 Peter 1:11"
+      ]
+    },
+    {
+      "main": "Philippians 1:4",
+      "themes": [
+        "hope",
+        "prayer"
+      ],
+      "related": [
+        "Philippians 1:3",
+        "Philippians 1:5",
+        "Philippians 1:6"
+      ]
+    },
+    {
+      "main": "Romans 3:26",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Romans 3:27",
+        "Romans 3:24",
+        "Romans 3:28"
+      ]
+    },
+    {
+      "main": "Matthew 20:30",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Matthew 20:29",
+        "Matthew 20:28",
+        "Matthew 20:32"
+      ]
+    },
+    {
+      "main": "Psalms 36:7",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Psalms 36:8",
+        "Psalms 36:5",
+        "Psalms 36:9"
+      ]
+    },
+    {
+      "main": "Luke 17:33",
+      "themes": [
+        "prayer",
+        "purpose"
+      ],
+      "related": [
+        "Luke 17:32",
+        "Luke 17:34",
+        "Luke 17:31"
+      ]
+    },
+    {
+      "main": "Proverbs 14:5",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Proverbs 14:4",
+        "Proverbs 14:6",
+        "Proverbs 14:3"
+      ]
+    },
+    {
+      "main": "Galatians 2:21",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Galatians 2:20",
+        "Galatians 2:19",
+        "Galatians 2:17"
+      ]
+    },
+    {
+      "main": "John 6:47",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 6:46",
+        "John 6:48",
+        "John 6:45"
+      ]
+    },
+    {
+      "main": "Ephesians 5:21",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "Ephesians 5:20",
+        "Ephesians 5:22",
+        "Ephesians 5:19"
+      ]
+    },
+    {
+      "main": "Hebrews 11:8",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:9",
+        "Hebrews 11:10",
+        "Hebrews 11:5"
+      ]
+    },
+    {
+      "main": "2 Timothy 2:25",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "2 Timothy 2:24",
+        "2 Timothy 2:23",
+        "2 Timothy 2:22"
+      ]
+    },
+    {
+      "main": "Colossians 4:9",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Colossians 4:8",
+        "Colossians 4:10",
+        "Colossians 4:7"
+      ]
+    },
+    {
+      "main": "2 Corinthians 10:5",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "2 Corinthians 10:6",
+        "2 Corinthians 10:2",
+        "2 Corinthians 10:9"
+      ]
+    },
+    {
+      "main": "1 Timothy 5:21",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "1 Timothy 5:22",
+        "1 Timothy 5:19",
+        "1 Timothy 5:23"
+      ]
+    },
+    {
+      "main": "1 Peter 3:6",
+      "themes": [
+        "courage",
+        "purpose"
+      ],
+      "related": [
+        "1 Peter 3:5",
+        "1 Peter 3:7",
+        "1 Peter 3:4"
+      ]
+    },
+    {
+      "main": "1 John 4:10",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:11",
+        "1 John 4:8",
+        "1 John 4:12"
+      ]
+    },
+    {
+      "main": "1 Corinthians 10:33",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "1 Corinthians 10:32",
+        "1 Corinthians 10:31",
+        "1 Corinthians 10:30"
+      ]
+    },
+    {
+      "main": "Romans 4:20",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Romans 4:19",
+        "Romans 4:21",
+        "Romans 4:18"
+      ]
+    },
+    {
+      "main": "Revelation 7:12",
+      "themes": [
+        "wisdom",
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Revelation 7:13",
+        "Revelation 7:10",
+        "Revelation 7:9"
+      ]
+    },
+    {
+      "main": "Psalms 40:11",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "Psalms 40:10",
+        "Psalms 40:12",
+        "Psalms 40:9"
+      ]
+    },
+    {
+      "main": "Proverbs 16:16",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 16:15",
+        "Proverbs 16:17",
+        "Proverbs 16:13"
+      ]
+    },
+    {
+      "main": "Philippians 4:23",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "Philippians 4:22",
+        "Philippians 4:21",
+        "Philippians 4:20"
+      ]
+    },
+    {
+      "main": "Matthew 5:9",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Matthew 5:8",
+        "Matthew 5:10",
+        "Matthew 5:7"
+      ]
+    },
+    {
+      "main": "Luke 19:46",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Luke 19:45",
+        "Luke 19:44",
+        "Luke 19:48"
+      ]
+    },
+    {
+      "main": "John 7:9",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "John 7:8",
+        "John 7:10",
+        "John 7:7"
+      ]
+    },
+    {
+      "main": "James 5:11",
+      "themes": [
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "James 5:10",
+        "James 5:13",
+        "James 5:8"
+      ]
+    },
+    {
+      "main": "Hebrews 11:17",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:16",
+        "Hebrews 11:18",
+        "Hebrews 11:15"
+      ]
+    },
+    {
+      "main": "Ephesians 5:22",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "Ephesians 5:21",
+        "Ephesians 5:23",
+        "Ephesians 5:20"
+      ]
+    },
+    {
+      "main": "Galatians 3:6",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Galatians 3:5",
+        "Galatians 3:7",
+        "Galatians 3:4"
+      ]
+    },
+    {
+      "main": "2 Timothy 3:11",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "2 Timothy 3:10",
+        "2 Timothy 3:12",
+        "2 Timothy 3:9"
+      ]
+    },
+    {
+      "main": "Colossians 1:4",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "Colossians 1:3",
+        "Colossians 1:5",
+        "Colossians 1:6"
+      ]
+    },
+    {
+      "main": "2 Corinthians 2:10",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "2 Corinthians 2:9",
+        "2 Corinthians 2:12",
+        "2 Corinthians 2:7"
+      ]
+    },
+    {
+      "main": "1 Timothy 1:7",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "1 Timothy 1:6",
+        "1 Timothy 1:8",
+        "1 Timothy 1:5"
+      ]
+    },
+    {
+      "main": "1 Peter 3:11",
+      "themes": [
+        "peace",
+        "prayer"
+      ],
+      "related": [
+        "1 Peter 3:10",
+        "1 Peter 3:12",
+        "1 Peter 3:9"
+      ]
+    },
+    {
+      "main": "1 John 4:11",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:10",
+        "1 John 4:12",
+        "1 John 4:13"
+      ]
+    },
+    {
+      "main": "1 Corinthians 11:4",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "1 Corinthians 11:3",
+        "1 Corinthians 11:5",
+        "1 Corinthians 11:2"
+      ]
+    },
+    {
+      "main": "Revelation 2:19",
+      "themes": [
+        "trust",
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "Revelation 2:18",
+        "Revelation 2:15",
+        "Revelation 2:25"
+      ]
+    },
+    {
+      "main": "Romans 8:26",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Romans 8:25",
+        "Romans 8:27",
+        "Romans 8:24"
+      ]
+    },
+    {
+      "main": "Psalms 45:7",
+      "themes": [
+        "hope",
+        "love"
+      ],
+      "related": [
+        "Psalms 45:6",
+        "Psalms 45:8",
+        "Psalms 45:9"
+      ]
+    },
+    {
+      "main": "Proverbs 16:22",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 16:21",
+        "Proverbs 16:23",
+        "Proverbs 16:20"
+      ]
+    },
+    {
+      "main": "Philippians 4:9",
+      "themes": [
+        "peace",
+        "presence"
+      ],
+      "related": [
+        "Philippians 4:8",
+        "Philippians 4:10",
+        "Philippians 4:7"
+      ]
+    },
+    {
+      "main": "Matthew 8:10",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Matthew 8:9",
+        "Matthew 8:11",
+        "Matthew 8:8"
+      ]
+    },
+    {
+      "main": "Luke 1:68",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Luke 1:67",
+        "Luke 1:69",
+        "Luke 1:66"
+      ]
+    },
+    {
+      "main": "Mark 2:5",
+      "themes": [
+        "trust",
+        "forgiveness"
+      ],
+      "related": [
+        "Mark 2:4",
+        "Mark 2:6",
+        "Mark 2:3"
+      ]
+    },
+    {
+      "main": "John 7:34",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 7:33",
+        "John 7:35",
+        "John 7:32"
+      ]
+    },
+    {
+      "main": "James 1:12",
+      "themes": [
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "James 1:13",
+        "James 1:10",
+        "James 1:14"
+      ]
+    },
+    {
+      "main": "Hebrews 11:20",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:19",
+        "Hebrews 11:21",
+        "Hebrews 11:18"
+      ]
+    },
+    {
+      "main": "Galatians 5:4",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Galatians 5:3",
+        "Galatians 5:5",
+        "Galatians 5:2"
+      ]
+    },
+    {
+      "main": "Ephesians 5:25",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Ephesians 5:24",
+        "Ephesians 5:26",
+        "Ephesians 5:23"
+      ]
+    },
+    {
+      "main": "Colossians 4:12",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Colossians 4:13",
+        "Colossians 4:10",
+        "Colossians 4:14"
+      ]
+    },
+    {
+      "main": "2 Corinthians 2:13",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "2 Corinthians 2:12",
+        "2 Corinthians 2:14",
+        "2 Corinthians 2:10"
+      ]
+    },
+    {
+      "main": "2 Timothy 4:16",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "2 Timothy 4:17",
+        "2 Timothy 4:18",
+        "2 Timothy 4:13"
+      ]
+    },
+    {
+      "main": "1 Timothy 2:15",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "1 Timothy 2:14",
+        "1 Timothy 2:13",
+        "1 Timothy 2:12"
+      ]
+    },
+    {
+      "main": "1 Peter 1:23",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "1 Peter 1:22",
+        "1 Peter 1:24",
+        "1 Peter 1:21"
+      ]
+    },
+    {
+      "main": "1 John 4:12",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:11",
+        "1 John 4:13",
+        "1 John 4:10"
+      ]
+    },
+    {
+      "main": "1 Corinthians 13:4",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Corinthians 13:3",
+        "1 Corinthians 13:5",
+        "1 Corinthians 13:2"
+      ]
+    },
+    {
+      "main": "Romans 9:11",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "Romans 9:10",
+        "Romans 9:12",
+        "Romans 9:9"
+      ]
+    },
+    {
+      "main": "Revelation 22:21",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "Revelation 22:20",
+        "Revelation 22:19",
+        "Revelation 22:17"
+      ]
+    },
+    {
+      "main": "Psalms 49:3",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Psalms 49:2",
+        "Psalms 49:4",
+        "Psalms 49:1"
+      ]
+    },
+    {
+      "main": "Philippians 1:11",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Philippians 1:10",
+        "Philippians 1:12",
+        "Philippians 1:13"
+      ]
+    },
+    {
+      "main": "Proverbs 17:24",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 17:25",
+        "Proverbs 17:22",
+        "Proverbs 17:21"
+      ]
+    },
+    {
+      "main": "Matthew 9:38",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Matthew 9:37",
+        "Matthew 9:36",
+        "Matthew 9:35"
+      ]
+    },
+    {
+      "main": "Mark 5:36",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Mark 5:35",
+        "Mark 5:37",
+        "Mark 5:38"
+      ]
+    },
+    {
+      "main": "Luke 1:78",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Luke 1:77",
+        "Luke 1:79",
+        "Luke 1:76"
+      ]
+    },
+    {
+      "main": "John 8:7",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "John 8:6",
+        "John 8:8",
+        "John 8:5"
+      ]
+    },
+    {
+      "main": "Hebrews 11:21",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:20",
+        "Hebrews 11:22",
+        "Hebrews 11:19"
+      ]
+    },
+    {
+      "main": "James 5:16",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "James 5:15",
+        "James 5:17",
+        "James 5:14"
+      ]
+    },
+    {
+      "main": "Galatians 2:5",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "Galatians 2:6",
+        "Galatians 2:3",
+        "Galatians 2:2"
+      ]
+    },
+    {
+      "main": "Ephesians 6:10",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Ephesians 6:9",
+        "Ephesians 6:8",
+        "Ephesians 6:7"
+      ]
+    },
+    {
+      "main": "Colossians 1:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Colossians 1:6",
+        "Colossians 1:8",
+        "Colossians 1:5"
+      ]
+    },
+    {
+      "main": "2 Corinthians 7:6",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "2 Corinthians 7:5",
+        "2 Corinthians 7:8",
+        "2 Corinthians 7:9"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:5",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "2 Timothy 1:4",
+        "2 Timothy 1:6",
+        "2 Timothy 1:3"
+      ]
+    },
+    {
+      "main": "1 Peter 2:12",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "1 Peter 2:13",
+        "1 Peter 2:10",
+        "1 Peter 2:9"
+      ]
+    },
+    {
+      "main": "1 Timothy 3:11",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 3:10",
+        "1 Timothy 3:12",
+        "1 Timothy 3:9"
+      ]
+    },
+    {
+      "main": "1 John 2:10",
+      "themes": [
+        "love",
+        "presence"
+      ],
+      "related": [
+        "1 John 2:9",
+        "1 John 2:11",
+        "1 John 2:8"
+      ]
+    },
+    {
+      "main": "1 Corinthians 13:5",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "1 Corinthians 13:4",
+        "1 Corinthians 13:6",
+        "1 Corinthians 13:3"
+      ]
+    },
+    {
+      "main": "Romans 9:16",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 9:15",
+        "Romans 9:17",
+        "Romans 9:14"
+      ]
+    },
+    {
+      "main": "Revelation 14:12",
+      "themes": [
+        "trust",
+        "discipline"
+      ],
+      "related": [
+        "Revelation 14:13",
+        "Revelation 14:14",
+        "Revelation 14:15"
+      ]
+    },
+    {
+      "main": "Psalms 50:23",
+      "themes": [
+        "gratitude",
+        "forgiveness"
+      ],
+      "related": [
+        "Psalms 50:22",
+        "Psalms 50:21",
+        "Psalms 50:20"
+      ]
+    },
+    {
+      "main": "Proverbs 17:28",
+      "themes": [
+        "peace",
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 17:27",
+        "Proverbs 17:25",
+        "Proverbs 17:24"
+      ]
+    },
+    {
+      "main": "Philippians 2:12",
+      "themes": [
+        "love",
+        "forgiveness"
+      ],
+      "related": [
+        "Philippians 2:11",
+        "Philippians 2:13",
+        "Philippians 2:10"
+      ]
+    },
+    {
+      "main": "Mark 14:49",
+      "themes": [
+        "wisdom",
+        "presence"
+      ],
+      "related": [
+        "Mark 14:50",
+        "Mark 14:51",
+        "Mark 14:46"
+      ]
+    },
+    {
+      "main": "Matthew 17:15",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Matthew 17:14",
+        "Matthew 17:16",
+        "Matthew 17:13"
+      ]
+    },
+    {
+      "main": "Luke 10:20",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Luke 10:21",
+        "Luke 10:22",
+        "Luke 10:23"
+      ]
+    },
+    {
+      "main": "John 8:13",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "John 8:12",
+        "John 8:14",
+        "John 8:15"
+      ]
+    },
+    {
+      "main": "James 4:10",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "James 4:9",
+        "James 4:11",
+        "James 4:8"
+      ]
+    },
+    {
+      "main": "Hebrews 11:22",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:21",
+        "Hebrews 11:23",
+        "Hebrews 11:20"
+      ]
+    },
+    {
+      "main": "Ephesians 2:15",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Ephesians 2:14",
+        "Ephesians 2:16",
+        "Ephesians 2:17"
+      ]
+    },
+    {
+      "main": "Galatians 3:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Galatians 3:6",
+        "Galatians 3:8",
+        "Galatians 3:5"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:11",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "2 Timothy 1:10",
+        "2 Timothy 1:12",
+        "2 Timothy 1:9"
+      ]
+    },
+    {
+      "main": "Colossians 2:12",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Colossians 2:10",
+        "Colossians 2:14",
+        "Colossians 2:9"
+      ]
+    },
+    {
+      "main": "2 Corinthians 9:15",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "2 Corinthians 9:14",
+        "2 Corinthians 9:13",
+        "2 Corinthians 9:12"
+      ]
+    },
+    {
+      "main": "1 Timothy 1:15",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 1:14",
+        "1 Timothy 1:16",
+        "1 Timothy 1:13"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 5:18",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "1 Thessalonians 5:17",
+        "1 Thessalonians 5:19",
+        "1 Thessalonians 5:16"
+      ]
+    },
+    {
+      "main": "1 Peter 2:13",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "1 Peter 2:12",
+        "1 Peter 2:15",
+        "1 Peter 2:10"
+      ]
+    },
+    {
+      "main": "1 John 2:15",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 2:14",
+        "1 John 2:16",
+        "1 John 2:13"
+      ]
+    },
+    {
+      "main": "1 Corinthians 13:6",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "1 Corinthians 13:5",
+        "1 Corinthians 13:7",
+        "1 Corinthians 13:4"
+      ]
+    },
+    {
+      "main": "Romans 10:17",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Romans 10:16",
+        "Romans 10:18",
+        "Romans 10:15"
+      ]
+    },
+    {
+      "main": "Revelation 5:12",
+      "themes": [
+        "courage",
+        "wisdom"
+      ],
+      "related": [
+        "Revelation 5:13",
+        "Revelation 5:10",
+        "Revelation 5:7"
+      ]
+    },
+    {
+      "main": "Psalms 51:1",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Psalms 51:2",
+        "Psalms 51:3",
+        "Psalms 51:4"
+      ]
+    },
+    {
+      "main": "Proverbs 18:1",
+      "themes": [
+        "wisdom",
+        "prayer"
+      ],
+      "related": [
+        "Proverbs 18:2",
+        "Proverbs 18:3",
+        "Proverbs 18:4"
+      ]
+    },
+    {
+      "main": "Philippians 2:16",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Philippians 2:17",
+        "Philippians 2:14",
+        "Philippians 2:18"
+      ]
+    },
+    {
+      "main": "Philemon 1:4",
+      "themes": [
+        "prayer",
+        "gratitude"
+      ],
+      "related": [
+        "Philemon 1:3",
+        "Philemon 1:2",
+        "Philemon 1:6"
+      ]
+    },
+    {
+      "main": "Matthew 18:26",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "Matthew 18:25",
+        "Matthew 18:27",
+        "Matthew 18:24"
+      ]
+    },
+    {
+      "main": "Mark 5:19",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Mark 5:20",
+        "Mark 5:17",
+        "Mark 5:21"
+      ]
+    },
+    {
+      "main": "Luke 15:10",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Luke 15:9",
+        "Luke 15:11",
+        "Luke 15:8"
+      ]
+    },
+    {
+      "main": "John 8:24",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 8:23",
+        "John 8:25",
+        "John 8:26"
+      ]
+    },
+    {
+      "main": "James 5:10",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "James 5:11",
+        "James 5:8",
+        "James 5:7"
+      ]
+    },
+    {
+      "main": "Hebrews 11:24",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:23",
+        "Hebrews 11:25",
+        "Hebrews 11:22"
+      ]
+    },
+    {
+      "main": "Galatians 4:5",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Galatians 4:4",
+        "Galatians 4:6",
+        "Galatians 4:3"
+      ]
+    },
+    {
+      "main": "Colossians 3:18",
+      "themes": [
+        "humility"
+      ],
+      "related": [
+        "Colossians 3:17",
+        "Colossians 3:19",
+        "Colossians 3:16"
+      ]
+    },
+    {
+      "main": "Ephesians 4:29",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 4:28",
+        "Ephesians 4:30",
+        "Ephesians 4:32"
+      ]
+    },
+    {
+      "main": "2 Timothy 1:17",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "2 Timothy 1:16",
+        "2 Timothy 1:18",
+        "2 Timothy 1:15"
+      ]
+    },
+    {
+      "main": "2 Corinthians 5:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "2 Corinthians 5:6",
+        "2 Corinthians 5:8",
+        "2 Corinthians 5:5"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 5:28",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "1 Thessalonians 5:27",
+        "1 Thessalonians 5:26",
+        "1 Thessalonians 5:25"
+      ]
+    },
+    {
+      "main": "1 Timothy 1:11",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 1:12",
+        "1 Timothy 1:13",
+        "1 Timothy 1:8"
+      ]
+    },
+    {
+      "main": "1 Peter 2:17",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Peter 2:16",
+        "1 Peter 2:15",
+        "1 Peter 2:20"
+      ]
+    },
+    {
+      "main": "1 John 2:23",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "1 John 2:22",
+        "1 John 2:24",
+        "1 John 2:21"
+      ]
+    },
+    {
+      "main": "1 Corinthians 14:20",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "1 Corinthians 14:19",
+        "1 Corinthians 14:21",
+        "1 Corinthians 14:18"
+      ]
+    },
+    {
+      "main": "Titus 3:15",
+      "themes": [
+        "trust",
+        "love",
+        "presence"
+      ],
+      "related": [
+        "Titus 3:14",
+        "Titus 3:13",
+        "Titus 3:12"
+      ]
+    },
+    {
+      "main": "Romans 16:5",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 16:4",
+        "Romans 16:6",
+        "Romans 16:3"
+      ]
+    },
+    {
+      "main": "Revelation 19:7",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Revelation 19:6",
+        "Revelation 19:8",
+        "Revelation 19:5"
+      ]
+    },
+    {
+      "main": "Psalms 52:7",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Psalms 52:6",
+        "Psalms 52:8",
+        "Psalms 52:9"
+      ]
+    },
+    {
+      "main": "Proverbs 19:27",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Proverbs 19:26",
+        "Proverbs 19:24",
+        "Proverbs 19:23"
+      ]
+    },
+    {
+      "main": "Philippians 4:4",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Philippians 4:3",
+        "Philippians 4:5",
+        "Philippians 4:2"
+      ]
+    },
+    {
+      "main": "Philemon 1:25",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "Philemon 1:24",
+        "Philemon 1:23",
+        "Philemon 1:22"
+      ]
+    },
+    {
+      "main": "Matthew 18:35",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Matthew 18:33",
+        "Matthew 18:32",
+        "Matthew 18:31"
+      ]
+    },
+    {
+      "main": "Mark 15:43",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Mark 15:42",
+        "Mark 15:44",
+        "Mark 15:41"
+      ]
+    },
+    {
+      "main": "Luke 19:38",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "Luke 19:37",
+        "Luke 19:36",
+        "Luke 19:40"
+      ]
+    },
+    {
+      "main": "John 8:30",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "John 8:29",
+        "John 8:31",
+        "John 8:28"
+      ]
+    },
+    {
+      "main": "Galatians 4:10",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "Galatians 4:9",
+        "Galatians 4:11",
+        "Galatians 4:8"
+      ]
+    },
+    {
+      "main": "James 2:17",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "James 2:18",
+        "James 2:15",
+        "James 2:14"
+      ]
+    },
+    {
+      "main": "Ephesians 5:16",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Ephesians 5:15",
+        "Ephesians 5:17",
+        "Ephesians 5:14"
+      ]
+    },
+    {
+      "main": "Hebrews 11:29",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:30",
+        "Hebrews 11:32",
+        "Hebrews 11:25"
+      ]
+    },
+    {
+      "main": "Colossians 3:19",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Colossians 3:18",
+        "Colossians 3:20",
+        "Colossians 3:17"
+      ]
+    },
+    {
+      "main": "2 Timothy 3:7",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "2 Timothy 3:6",
+        "2 Timothy 3:8",
+        "2 Timothy 3:5"
+      ]
+    },
+    {
+      "main": "2 Corinthians 7:5",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "2 Corinthians 7:6",
+        "2 Corinthians 7:2",
+        "2 Corinthians 7:8"
+      ]
+    },
+    {
+      "main": "1 Timothy 3:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 3:8",
+        "1 Timothy 3:10",
+        "1 Timothy 3:11"
+      ]
+    },
+    {
+      "main": "1 Peter 1:4",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "1 Peter 1:3",
+        "1 Peter 1:5",
+        "1 Peter 1:6"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 5:24",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Thessalonians 5:23",
+        "1 Thessalonians 5:25",
+        "1 Thessalonians 5:22"
+      ]
+    },
+    {
+      "main": "1 John 3:6",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "1 John 3:5",
+        "1 John 3:7",
+        "1 John 3:4"
+      ]
+    },
+    {
+      "main": "1 Corinthians 15:40",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "1 Corinthians 15:41",
+        "1 Corinthians 15:38",
+        "1 Corinthians 15:42"
+      ]
+    },
+    {
+      "main": "Titus 1:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Titus 1:8",
+        "Titus 1:11",
+        "Titus 1:6"
+      ]
+    },
+    {
+      "main": "Romans 16:8",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 16:7",
+        "Romans 16:9",
+        "Romans 16:6"
+      ]
+    },
+    {
+      "main": "Revelation 11:17",
+      "themes": [
+        "gratitude"
+      ],
+      "related": [
+        "Revelation 11:16",
+        "Revelation 11:15",
+        "Revelation 11:19"
+      ]
+    },
+    {
+      "main": "Psalms 54:2",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 54:1",
+        "Psalms 54:3",
+        "Psalms 54:4"
+      ]
+    },
+    {
+      "main": "Proverbs 20:28",
+      "themes": [
+        "love",
+        "purpose"
+      ],
+      "related": [
+        "Proverbs 20:29",
+        "Proverbs 20:26",
+        "Proverbs 20:25"
+      ]
+    },
+    {
+      "main": "Philippians 4:13",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Philippians 4:12",
+        "Philippians 4:14",
+        "Philippians 4:11"
+      ]
+    },
+    {
+      "main": "Philemon 1:9",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Philemon 1:8",
+        "Philemon 1:10",
+        "Philemon 1:7"
+      ]
+    },
+    {
+      "main": "Mark 9:23",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Mark 9:24",
+        "Mark 9:21",
+        "Mark 9:20"
+      ]
+    },
+    {
+      "main": "Matthew 20:34",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Matthew 20:33",
+        "Matthew 20:32",
+        "Matthew 20:30"
+      ]
+    },
+    {
+      "main": "Luke 21:19",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "Luke 21:20",
+        "Luke 21:17",
+        "Luke 21:21"
+      ]
+    },
+    {
+      "main": "John 8:38",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "John 8:39",
+        "John 8:36",
+        "John 8:35"
+      ]
+    },
+    {
+      "main": "James 2:18",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "James 2:17",
+        "James 2:20",
+        "James 2:15"
+      ]
+    },
+    {
+      "main": "Galatians 4:20",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "Galatians 4:19",
+        "Galatians 4:21",
+        "Galatians 4:18"
+      ]
+    },
+    {
+      "main": "Hebrews 11:30",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Hebrews 11:29",
+        "Hebrews 11:32",
+        "Hebrews 11:33"
+      ]
+    },
+    {
+      "main": "Ephesians 5:28",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Ephesians 5:27",
+        "Ephesians 5:29",
+        "Ephesians 5:26"
+      ]
+    },
+    {
+      "main": "Colossians 3:21",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Colossians 3:20",
+        "Colossians 3:22",
+        "Colossians 3:19"
+      ]
+    },
+    {
+      "main": "3 John 1:5",
+      "themes": [
+        "trust",
+        "love"
+      ],
+      "related": [
+        "3 John 1:4",
+        "3 John 1:3",
+        "3 John 1:7"
+      ]
+    },
+    {
+      "main": "2 Timothy 4:11",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "2 Timothy 4:10",
+        "2 Timothy 4:12",
+        "2 Timothy 4:9"
+      ]
+    },
+    {
+      "main": "2 John 1:12",
+      "themes": [
+        "trust",
+        "hope"
+      ],
+      "related": [
+        "2 John 1:11",
+        "2 John 1:13",
+        "2 John 1:10"
+      ]
+    },
+    {
+      "main": "2 Thessalonians 3:18",
+      "themes": [
+        "presence",
+        "forgiveness"
+      ],
+      "related": [
+        "2 Thessalonians 3:16",
+        "2 Thessalonians 3:14",
+        "2 Thessalonians 3:13"
+      ]
+    },
+    {
+      "main": "2 Corinthians 8:4",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "2 Corinthians 8:3",
+        "2 Corinthians 8:5",
+        "2 Corinthians 8:2"
+      ]
+    },
+    {
+      "main": "1 Timothy 4:9",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 4:8",
+        "1 Timothy 4:10",
+        "1 Timothy 4:7"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 1:4",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Thessalonians 1:3",
+        "1 Thessalonians 1:5",
+        "1 Thessalonians 1:2"
+      ]
+    },
+    {
+      "main": "1 Peter 1:18",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "1 Peter 1:17",
+        "1 Peter 1:16",
+        "1 Peter 1:20"
+      ]
+    },
+    {
+      "main": "1 John 3:18",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 3:17",
+        "1 John 3:19",
+        "1 John 3:16"
+      ]
+    },
+    {
+      "main": "1 Corinthians 15:56",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "1 Corinthians 15:55",
+        "1 Corinthians 15:57",
+        "1 Corinthians 15:54"
+      ]
+    },
+    {
+      "main": "Titus 2:13",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Titus 2:12",
+        "Titus 2:14",
+        "Titus 2:11"
+      ]
+    },
+    {
+      "main": "Romans 16:9",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 16:8",
+        "Romans 16:10",
+        "Romans 16:7"
+      ]
+    },
+    {
+      "main": "Revelation 3:2",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Revelation 3:1",
+        "Revelation 3:3",
+        "Revelation 3:4"
+      ]
+    },
+    {
+      "main": "Psalms 55:1",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Psalms 55:2",
+        "Psalms 55:4",
+        "Psalms 55:5"
+      ]
+    },
+    {
+      "main": "Proverbs 21:22",
+      "themes": [
+        "courage",
+        "trust"
+      ],
+      "related": [
+        "Proverbs 21:21",
+        "Proverbs 21:23",
+        "Proverbs 21:20"
+      ]
+    },
+    {
+      "main": "Philippians 1:24",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "Philippians 1:23",
+        "Philippians 1:25",
+        "Philippians 1:22"
+      ]
+    },
+    {
+      "main": "Philemon 1:8",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "Philemon 1:7",
+        "Philemon 1:9",
+        "Philemon 1:6"
+      ]
+    },
+    {
+      "main": "Matthew 22:41",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Matthew 22:40",
+        "Matthew 22:42",
+        "Matthew 22:39"
+      ]
+    },
+    {
+      "main": "Luke 1:1",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Luke 1:2",
+        "Luke 1:3",
+        "Luke 1:4"
+      ]
+    },
+    {
+      "main": "Mark 14:38",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Mark 14:37",
+        "Mark 14:39",
+        "Mark 14:36"
+      ]
+    },
+    {
+      "main": "John 11:6",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "John 11:5",
+        "John 11:7",
+        "John 11:4"
+      ]
+    },
+    {
+      "main": "James 2:24",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "James 2:23",
+        "James 2:22",
+        "James 2:26"
+      ]
+    },
+    {
+      "main": "Hebrews 13:5",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "Hebrews 13:6",
+        "Hebrews 13:3",
+        "Hebrews 13:7"
+      ]
+    },
+    {
+      "main": "Galatians 6:6",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Galatians 6:5",
+        "Galatians 6:7",
+        "Galatians 6:4"
+      ]
+    },
+    {
+      "main": "Ephesians 5:33",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Ephesians 5:32",
+        "Ephesians 5:31",
+        "Ephesians 5:30"
+      ]
+    },
+    {
+      "main": "Colossians 4:6",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "Colossians 4:7",
+        "Colossians 4:4",
+        "Colossians 4:8"
+      ]
+    },
+    {
+      "main": "3 John 1:11",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "3 John 1:10",
+        "3 John 1:12",
+        "3 John 1:13"
+      ]
+    },
+    {
+      "main": "2 Timothy 4:13",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "2 Timothy 4:12",
+        "2 Timothy 4:11",
+        "2 Timothy 4:10"
+      ]
+    },
+    {
+      "main": "2 Thessalonians 2:17",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "2 Thessalonians 2:16",
+        "2 Thessalonians 2:15",
+        "2 Thessalonians 2:14"
+      ]
+    },
+    {
+      "main": "2 John 1:9",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "2 John 1:10",
+        "2 John 1:7",
+        "2 John 1:11"
+      ]
+    },
+    {
+      "main": "2 Peter 3:14",
+      "themes": [
+        "peace",
+        "love",
+        "discipline"
+      ],
+      "related": [
+        "2 Peter 3:13",
+        "2 Peter 3:15",
+        "2 Peter 3:12"
+      ]
+    },
+    {
+      "main": "2 Corinthians 8:6",
+      "themes": [
+        "forgiveness"
+      ],
+      "related": [
+        "2 Corinthians 8:5",
+        "2 Corinthians 8:7",
+        "2 Corinthians 8:4"
+      ]
+    },
+    {
+      "main": "1 Timothy 5:25",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "1 Timothy 5:23",
+        "1 Timothy 5:22",
+        "1 Timothy 5:21"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 1:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Thessalonians 1:6",
+        "1 Thessalonians 1:5",
+        "1 Thessalonians 1:9"
+      ]
+    },
+    {
+      "main": "1 John 4:19",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:20",
+        "1 John 4:21",
+        "1 John 4:16"
+      ]
+    },
+    {
+      "main": "1 Peter 2:7",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Peter 2:6",
+        "1 Peter 2:8",
+        "1 Peter 2:5"
+      ]
+    },
+    {
+      "main": "1 Corinthians 16:11",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "1 Corinthians 16:10",
+        "1 Corinthians 16:9",
+        "1 Corinthians 16:13"
+      ]
+    },
+    {
+      "main": "Titus 2:12",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Titus 2:11",
+        "Titus 2:13",
+        "Titus 2:10"
+      ]
+    },
+    {
+      "main": "Romans 16:12",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Romans 16:11",
+        "Romans 16:13",
+        "Romans 16:10"
+      ]
+    },
+    {
+      "main": "Revelation 18:20",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Revelation 18:19",
+        "Revelation 18:21",
+        "Revelation 18:18"
+      ]
+    },
+    {
+      "main": "Psalms 55:19",
+      "themes": [
+        "courage",
+        "presence"
+      ],
+      "related": [
+        "Psalms 55:18",
+        "Psalms 55:20",
+        "Psalms 55:17"
+      ]
+    },
+    {
+      "main": "Proverbs 23:24",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Proverbs 23:23",
+        "Proverbs 23:25",
+        "Proverbs 23:26"
+      ]
+    },
+    {
+      "main": "Matthew 26:41",
+      "themes": [
+        "prayer"
+      ],
+      "related": [
+        "Matthew 26:40",
+        "Matthew 26:42",
+        "Matthew 26:39"
+      ]
+    },
+    {
+      "main": "Philippians 2:28",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Philippians 2:27",
+        "Philippians 2:29",
+        "Philippians 2:26"
+      ]
+    },
+    {
+      "main": "Mark 15:32",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Mark 15:31",
+        "Mark 15:33",
+        "Mark 15:30"
+      ]
+    },
+    {
+      "main": "Philemon 1:20",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "Philemon 1:19",
+        "Philemon 1:21",
+        "Philemon 1:18"
+      ]
+    },
+    {
+      "main": "Luke 1:3",
+      "themes": [
+        "wisdom"
+      ],
+      "related": [
+        "Luke 1:2",
+        "Luke 1:4",
+        "Luke 1:1"
+      ]
+    },
+    {
+      "main": "John 12:2",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "John 12:1",
+        "John 12:3",
+        "John 12:4"
+      ]
+    },
+    {
+      "main": "James 4:9",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "James 4:8",
+        "James 4:10",
+        "James 4:11"
+      ]
+    },
+    {
+      "main": "Hebrews 13:10",
+      "themes": [
+        "purpose"
+      ],
+      "related": [
+        "Hebrews 13:9",
+        "Hebrews 13:8",
+        "Hebrews 13:7"
+      ]
+    },
+    {
+      "main": "Galatians 6:10",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Galatians 6:9",
+        "Galatians 6:11",
+        "Galatians 6:8"
+      ]
+    },
+    {
+      "main": "Colossians 4:14",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "Colossians 4:13",
+        "Colossians 4:15",
+        "Colossians 4:12"
+      ]
+    },
+    {
+      "main": "Ephesians 6:16",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "Ephesians 6:15",
+        "Ephesians 6:14",
+        "Ephesians 6:18"
+      ]
+    },
+    {
+      "main": "3 John 1:4",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "3 John 1:3",
+        "3 John 1:5",
+        "3 John 1:2"
+      ]
+    },
+    {
+      "main": "2 Timothy 4:21",
+      "themes": [
+        "discipline"
+      ],
+      "related": [
+        "2 Timothy 4:20",
+        "2 Timothy 4:22",
+        "2 Timothy 4:19"
+      ]
+    },
+    {
+      "main": "2 Thessalonians 1:10",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "2 Thessalonians 1:11",
+        "2 Thessalonians 1:12",
+        "2 Thessalonians 1:7"
+      ]
+    },
+    {
+      "main": "2 Peter 3:8",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "2 Peter 3:10",
+        "2 Peter 3:5",
+        "2 Peter 3:11"
+      ]
+    },
+    {
+      "main": "2 John 1:4",
+      "themes": [
+        "hope"
+      ],
+      "related": [
+        "2 John 1:3",
+        "2 John 1:5",
+        "2 John 1:2"
+      ]
+    },
+    {
+      "main": "2 Corinthians 11:21",
+      "themes": [
+        "courage"
+      ],
+      "related": [
+        "2 Corinthians 11:20",
+        "2 Corinthians 11:22",
+        "2 Corinthians 11:19"
+      ]
+    },
+    {
+      "main": "1 Timothy 6:12",
+      "themes": [
+        "trust"
+      ],
+      "related": [
+        "1 Timothy 6:11",
+        "1 Timothy 6:13",
+        "1 Timothy 6:10"
+      ]
+    },
+    {
+      "main": "1 Thessalonians 2:11",
+      "themes": [
+        "peace"
+      ],
+      "related": [
+        "1 Thessalonians 2:10",
+        "1 Thessalonians 2:12",
+        "1 Thessalonians 2:9"
+      ]
+    },
+    {
+      "main": "1 Peter 5:13",
+      "themes": [
+        "presence"
+      ],
+      "related": [
+        "1 Peter 5:12",
+        "1 Peter 5:14",
+        "1 Peter 5:11"
+      ]
+    },
+    {
+      "main": "1 John 4:8",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 John 4:7",
+        "1 John 4:6",
+        "1 John 4:10"
+      ]
+    },
+    {
+      "main": "1 Corinthians 16:14",
+      "themes": [
+        "love"
+      ],
+      "related": [
+        "1 Corinthians 16:13",
+        "1 Corinthians 16:15",
+        "1 Corinthians 16:16"
+      ]
+    }
+  ]
+}
