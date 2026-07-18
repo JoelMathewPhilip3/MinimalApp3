@@ -532,7 +532,7 @@ private fun DailyVerseScreen(
                 Text("Open favourites  "); Icon(Icons.Outlined.ChevronRight, "Open favourites")
             }
             Text(
-                "Swipe left for favourites · Full King James Version offline · ${DailyVerseRepository.size(context)}-day reading-plan cycle",
+                "Swipe left for favourites · Full Berean Standard Bible offline · ${DailyVerseRepository.size(context)}-day reading-plan cycle",
                 modifier = Modifier.fillMaxWidth().padding(bottom = 18.dp),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 style = MaterialTheme.typography.bodySmall
@@ -568,7 +568,7 @@ private fun ChapterScreen(reference: String?, onBack: () -> Unit) {
                 item {
                     Spacer(Modifier.height(24.dp))
                     Text(
-                        "King James Version · Full chapter stored offline",
+                        "Berean Standard Bible · Full chapter stored offline",
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier.padding(bottom = 24.dp)
@@ -732,7 +732,7 @@ private fun SettingsScreen(
         item { SettingRow("Favourites", "${state.settings.favoriteIds.size} selected", onFavorites) }
         item { ToggleRow("Minimal mode", "Shows at most six favourites and uses a deliberate hold to open all apps.", state.settings.minimalMode, onMinimal) }
         item { Section("Daily Verse") }
-        item { ToggleRow("Morning reading", "Show three related KJV passages below the verse of the day.", state.settings.showMorningReading, onShowMorningReading) }
+        item { ToggleRow("Morning reading", "Show three related BSB passages below the verse of the day.", state.settings.showMorningReading, onShowMorningReading) }
         item { Text("Swipe left from Home or tap the Bible icon to open today's reading. The verse changes once per calendar day without background work.", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(vertical = 8.dp)) }
         item { Section("Screen") }
         item {
