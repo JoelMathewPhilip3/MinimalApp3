@@ -86,8 +86,84 @@ try:
         "SELECT COUNT(*) FROM BSB_verses"
     ).fetchone()[0]
 
-    if book_count != 66:
-        raise SystemExit(f"Expected 66 BSB books, found {book_count}")
+database_path = ROOT / "app/src/main/assets/bsb.sqlite"
+
+connection = sqlite3.connect(database_path)
+
+try:
+    tables = {
+        row[0]
+        for row in connection.execute(
+            "SELECT name FROM sqlite_master WHERE type = 'table'"
+        )
+    }
+
+    required_tables = {"BSB_books", "BSB_verses"}
+    missing_tables = required_tables - tables
+
+    if missing_tables:
+        raise SystemExit(
+            "Missing required BSB database tables: "
+            + ", ".join(sorted(missing_tables))
+        )
+
+    verse_count = connection.execute(
+        "SELECT COUNT(*) FROM BSB_verses"
+    ).fetchone()[0]
+
+    referenced_book_count = connection.execute(
+        "SELECT COUNT(DISTINCT book_id) FROM BSB_verses"
+    ).fetchone()[0]
+
+    distinct_book_name_count = connection.execute(
+        """
+        SELECT COUNT(DISTINCT b.name)
+        FROM BSB_books b
+        INNER JOIN BSB_verses v
+            ON v.book_id = b.id
+        """
+    ).fetchone()[0]
+
+    orphaned_verse_count = connection.execute(
+        """
+        SELECT COUNT(*)
+        FROM BSB_verses v
+        LEFT JOIN BSB_books b
+            ON b.id = v.book_id
+        WHERE b.id IS NULL
+        """
+    ).fetchone()[0]
+
+    if verse_count < 31_000:
+        raise SystemExit(
+            f"Expected a complete Bible, found only {verse_count} verses"
+        )
+
+    if referenced_book_count != 66:
+        raise SystemExit(
+            "Expected verses from 66 Bible books, "
+            f"found {referenced_book_count}"
+        )
+
+    if distinct_book_name_count != 66:
+        raise SystemExit(
+            "Expected 66 distinct referenced book names, "
+            f"found {distinct_book_name_count}"
+        )
+
+    if orphaned_verse_count != 0:
+        raise SystemExit(
+            f"Found {orphaned_verse_count} verses with no matching book"
+        )
+
+    print(f"BSB database verses: {verse_count}")
+    print(f"Referenced BSB books: {referenced_book_count}")
+    print(f"Distinct referenced book names: {distinct_book_name_count}")
+    print("Orphaned verses: 0")
+
+finally:
+    connection.close()
+    
     if verse_count < 31_000:
         raise SystemExit(
             f"Expected a complete BSB Bible, found only {verse_count} verses"
